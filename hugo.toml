@@ -1,4 +1,3 @@
 baseURL = 'https://pascal-lang.org/'
 languageCode = 'en-us'
 title = 'Object Pascal Language'
-theme = 'ananke'
