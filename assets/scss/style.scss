@@ -1,15 +1,9 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
-@import "abstracts/functions";
+@charset "utf-8";
 
-@import "base/reset";
-@import "base/typography";
-@import "base/base";
-
-@import "layout/grid";
-@import "layout/header";
-@import "layout/sidebar";
-@import "layout/footer";
-
-@import "themes/light";
-@import "themes/dark";
+@use "abstracts";
+@use "vendors";
+@use "base";
+@use "utilities";
+@use "components";
+@use "pages";
+@use "themes";
