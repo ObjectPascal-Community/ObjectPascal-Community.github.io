@@ -14,7 +14,7 @@ Comprehensive guides and references for Pascal programming.
 
 Pascal uses a clear, structured syntax that emphasizes readability:
 
-```pascal
+```objectpascal
 program ExampleProgram;
 
 const
@@ -63,7 +63,7 @@ end.
 
 **Structured Types:**
 
-```pascal
+```objectpascal
 { Arrays }
 type
     TScores = array[1..10] of integer;
@@ -87,7 +87,7 @@ type
 
 ### File Operations
 
-```pascal
+```objectpascal
 program FileExample;
 var
     inputFile, outputFile: text;
@@ -114,7 +114,7 @@ end.
 
 ### Dynamic Arrays
 
-```pascal
+```objectpascal
 program DynamicArrayExample;
 type
     TIntArray = array of integer;
@@ -146,7 +146,7 @@ end.
 
 ### Object-Oriented Programming
 
-```pascal
+```objectpascal
 program OOPExample;
 
 type
@@ -214,14 +214,14 @@ end.
 ### Code Style
 
 1. **Use meaningful names:**
-   ```pascal
+   ```objectpascal
    var
        studentCount: integer;    // Good
        sc: integer;              // Avoid
    ```
 
 2. **Consistent indentation:**
-   ```pascal
+   ```objectpascal
    if condition then
    begin
        statement1;
@@ -230,7 +230,7 @@ end.
    ```
 
 3. **Comment your code:**
-   ```pascal
+   ```objectpascal
    { Calculate compound interest }
    function CompoundInterest(principal, rate: real; years: integer): real;
    begin
@@ -240,7 +240,7 @@ end.
 
 ### Error Handling
 
-```pascal
+```objectpascal
 program ErrorHandlingExample;
 var
     number, divisor: integer;
@@ -298,7 +298,7 @@ end.
 The System unit is automatically included and provides core functionality:
 
 **Memory Management:**
-```pascal
+```objectpascal
 { Dynamic memory allocation }
 var
     ptr: ^integer;
@@ -311,7 +311,7 @@ end;
 ```
 
 **String Functions:**
-```pascal
+```objectpascal
 program StringFunctions;
 var
     text: string;
@@ -334,7 +334,7 @@ end.
 
 Provides extended system utilities:
 
-```pascal
+```objectpascal
 uses SysUtils;
 
 program SysUtilsExample;
@@ -364,7 +364,7 @@ end.
 
 Mathematical functions and constants:
 
-```pascal
+```objectpascal
 uses Math;
 
 program MathExample;
@@ -391,7 +391,7 @@ end.
 
 ### Generic Programming
 
-```pascal
+```objectpascal
 program GenericExample;
 
 {$mode objfpc}
@@ -462,7 +462,7 @@ end.
 
 ### Interface Programming
 
-```pascal
+```objectpascal
 program InterfaceExample;
 
 {$mode objfpc}
@@ -551,7 +551,7 @@ end.
 
 ### Multi-threading
 
-```pascal
+```objectpascal
 program ThreadExample;
 
 {$mode objfpc}
@@ -613,7 +613,7 @@ end.
 
 ### SQLite Integration
 
-```pascal
+```objectpascal
 program DatabaseExample;
 
 {$mode objfpc}
@@ -684,7 +684,7 @@ end.
 
 ### Basic Form Application
 
-```pascal
+```objectpascal
 unit MainForm;
 
 {$mode objfpc}{$H+}
@@ -738,7 +738,7 @@ end.
 
 ### Memory Management Tips
 
-```pascal
+```objectpascal
 program PerformanceExample;
 
 type
@@ -778,7 +778,7 @@ end.
 
 ### Compiler Directives
 
-```pascal
+```objectpascal
 program CompilerDirectives;
 
 {$mode objfpc}          // Object Pascal mode
@@ -814,7 +814,7 @@ end.
 
 ### Unit Testing Framework
 
-```pascal
+```objectpascal
 program TestExample;
 
 {$mode objfpc}

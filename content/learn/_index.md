@@ -29,7 +29,7 @@ Choose your Pascal development environment:
 
 Create a new file called `hello.pas`:
 
-```pascal
+```objectpascal
 program HelloWorld;
 begin
     writeln('Hello, Pascal World!');
@@ -50,7 +50,7 @@ fpc hello.pas
 
 Every Pascal program follows this basic structure:
 
-```pascal
+```objectpascal
 program ProgramName;
 
 { Variable declarations }
@@ -71,7 +71,7 @@ end.
 
 Pascal has strong typing with these fundamental types:
 
-```pascal
+```objectpascal
 var
     // Integer types
     age: integer;
@@ -93,7 +93,7 @@ var
 
 **Conditional Statements:**
 
-```pascal
+```objectpascal
 if age >= 18 then
     writeln('You are an adult')
 else
@@ -109,7 +109,7 @@ end;
 
 **Loops:**
 
-```pascal
+```objectpascal
 { For loop }
 for i := 1 to 10 do
     writeln('Number: ', i);
@@ -132,7 +132,7 @@ until number > 0;
 
 ### Procedures
 
-```pascal
+```objectpascal
 procedure greetUser(name: string);
 begin
     writeln('Hello, ', name, '!');
@@ -147,7 +147,7 @@ end.
 
 ### Functions
 
-```pascal
+```objectpascal
 function calculateArea(radius: real): real;
 begin
     calculateArea := 3.14159 * radius * radius;
@@ -182,7 +182,7 @@ end.
 ### Arrays and Data Structures
 
 **Static Arrays:**
-```pascal
+```objectpascal
 program ArrayExample;
 var
     scores: array[1..5] of integer;
@@ -205,7 +205,7 @@ end.
 ```
 
 **Records (Structures):**
-```pascal
+```objectpascal
 program RecordExample;
 type
     TStudent = record
@@ -235,7 +235,7 @@ end.
 ### File Input/Output
 
 **Reading from Files:**
-```pascal
+```objectpascal
 program ReadFile;
 var
     inputFile: text;
@@ -259,7 +259,7 @@ end.
 ```
 
 **Writing to Files:**
-```pascal
+```objectpascal
 program WriteFile;
 var
     outputFile: text;
@@ -281,7 +281,7 @@ end.
 
 ### Error Handling
 
-```pascal
+```objectpascal
 program ErrorHandling;
 var
     number, divisor: integer;
@@ -388,7 +388,7 @@ end.
 5. **Ask for help** - community forums and Discord
 
 ### Debugging Tips
-```pascal
+```objectpascal
 { Add debug output }
 writeln('Debug: Variable x = ', x);
 writeln('Debug: Entering function Calculate');
