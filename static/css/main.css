@@ -187,8 +187,19 @@ a:hover {
 /* Hero section */
 .hero {
   padding: var(--spacing-3xl) 0;
-  text-align: center;
   background-color: var(--bg-secondary);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  min-height: 500px;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero h1 {
@@ -203,16 +214,29 @@ a:hover {
   font-size: 1.5rem;
   margin-bottom: var(--spacing-xl);
   color: var(--text-secondary);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.4;
+}
+
+.hero-code {
+  position: relative;
+}
+
+.hero-code .highlight {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hero-code pre {
+  padding: var(--spacing-xl);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .hero-actions {
   display: flex;
   gap: var(--spacing-md);
-  justify-content: center;
   margin-bottom: var(--spacing-lg);
   flex-wrap: wrap;
 }
@@ -420,12 +444,28 @@ pre code {
     display: flex;
   }
   
-  .hero h1 {
-    font-size: 2rem;
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    min-height: auto;
+    text-align: center;
   }
   
-  .hero p {
-    font-size: 1.1rem;
+  .hero-text {
+    text-align: center;
+    order: 1;
+  }
+  
+  .hero-code {
+    order: 2;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
   }
   
   .cards {

@@ -7,7 +7,7 @@ title = 'Pascal - Readable, Reliable Programming'
 
 [markup]
   [markup.highlight]
-    style = 'monokai'
+    style = 'catppuccin-frappe'
     lineNos = true
     tabWidth = 2
     codeFences = true
@@ -33,6 +33,10 @@ title = 'Pascal - Readable, Reliable Programming'
     name = 'Community'
     url = '/community/'
     weight = 40
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 15
 
 # Enable section pages
 [taxonomies]

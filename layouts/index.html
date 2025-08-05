@@ -2,26 +2,41 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <h1>Pascal</h1>
-        <p class="hero-subtitle">A language empowering everyone<br>to build readable and reliable software.</p>
-        <div class="hero-actions">
-            <a href="{{ "/learn/" | relURL }}" class="hero-cta primary">Get Started</a>
-            <a href="{{ "/docs/" | relURL }}" class="hero-cta secondary">Documentation</a>
-        </div>
-        <p class="version-info">Latest: Free Pascal 3.2.2 • Lazarus 3.6</p>
-    </div>
-</section>
-
-<!-- Code Example Section -->
-<section class="content-section">
-    <div class="container">
-        <h2 class="section-title">Clean, Readable Code</h2>
-        {{ $codeExample := `program HelloWorld;
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Pascal</h1>
+                <p class="hero-subtitle">Build readable, fast and reliable software.</p>
+                <div class="hero-actions">
+                    <a href="{{ "/learn/" | relURL }}" class="hero-cta primary">Get Started</a>
+                    <a href="{{ "/docs/" | relURL }}" class="hero-cta secondary">Documentation</a>
+                </div>
+                <p class="version-info">Latest: Free Pascal 3.2.2 • Lazarus 4.2</p>
+            </div>
+            <div class="hero-code">
+                {{ $heroCode := `program webserver;
+{$mode objfpc}{$H+}
+ 
+uses
+  {$ifdef UNIX}
+  cthreads, cmem,
+  {$endif} 
+  fphttpapp, httpdefs, httproute;
+ 
+procedure route1(aReq: TRequest; aResp: TResponse);
 begin
-    writeln('Hello, World!');
-    writeln('Welcome to Pascal programming');
+  aResp.Content:='<html><body><h1>Hello Pascal!</h1></body></html>';
+end;
+ 
+begin
+  HTTPRouter.RegisterRoute('/', @route1);
+  Application.Port := 1999;
+  Application.Threaded := true;
+  Application.Initialize;
+  Application.Run;
 end.` }}
-        {{ highlight $codeExample "objectpascal" "linenos=true" }}
+                {{ highlight $heroCode "objectpascal" "linenos=false" }}
+            </div>
+        </div>
     </div>
 </section>
 
