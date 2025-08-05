@@ -1,0 +1,86 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Pascal - Readable, Reliable Programming</h1>
+        <p>A structured programming language that emphasizes clarity, reliability, and educational value. Perfect for learning programming fundamentals and building robust applications.</p>
+        <a href="{{ "/learn/" | relURL }}" class="hero-cta">Get Started</a>
+    </div>
+</section>
+
+<!-- Code Example Section -->
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title">Clean, Readable Code</h2>
+        <div class="highlight">
+            <pre><code class="language-pascal">program HelloWorld;
+begin
+    writeln('Hello, World!');
+    writeln('Welcome to Pascal programming');
+end.</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="content-section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+        <h2 class="section-title">Why Choose Pascal?</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>📖 Readable</h3>
+                <p>Pascal's clear syntax and structured approach make code easy to read, understand, and maintain. Perfect for both beginners and experienced developers.</p>
+            </div>
+            <div class="card">
+                <h3>🔒 Reliable</h3>
+                <p>Strong typing and compile-time checking help catch errors early, resulting in more robust and dependable software applications.</p>
+            </div>
+            <div class="card">
+                <h3>🎓 Educational</h3>
+                <p>Designed with education in mind, Pascal teaches fundamental programming concepts and good coding practices from the ground up.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Cross-Platform</h3>
+                <p>Modern Pascal implementations support multiple platforms, allowing you to write once and deploy everywhere with excellent performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Getting Started Section -->
+<section class="content-section">
+    <div class="container">
+        <h2 class="section-title">Quick Start</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>1. Install</h3>
+                <p>Download and install Free Pascal or Lazarus IDE to start coding immediately with a complete development environment.</p>
+                <a href="{{ "/learn/#install" | relURL }}">Installation Guide →</a>
+            </div>
+            <div class="card">
+                <h3>2. Learn</h3>
+                <p>Follow our comprehensive tutorials covering Pascal fundamentals, from basic syntax to advanced programming concepts.</p>
+                <a href="{{ "/learn/" | relURL }}">Start Learning →</a>
+            </div>
+            <div class="card">
+                <h3>3. Build</h3>
+                <p>Create your first Pascal program and explore our examples, from simple console apps to complex desktop applications.</p>
+                <a href="{{ "/docs/" | relURL }}">View Examples →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Section -->
+<section class="content-section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+        <h2 class="section-title">Join the Community</h2>
+        <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--spacing-xl);">
+            Connect with Pascal developers worldwide, share knowledge, and contribute to the growing Pascal ecosystem.
+        </p>
+        <div style="text-align: center;">
+            <a href="{{ "/community/" | relURL }}" class="hero-cta">Join Community</a>
+        </div>
+    </div>
+</section>
+{{ end }}

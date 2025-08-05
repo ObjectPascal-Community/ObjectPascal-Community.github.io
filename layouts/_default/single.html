@@ -1,0 +1,85 @@
+{{ define "main" }}
+<article class="content-section">
+    <div class="container">
+        <header class="article-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Date }}
+            <time datetime="{{ .Date.Format "2006-01-02" }}" class="article-date">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            {{ end }}
+        </header>
+        
+        <div class="article-content">
+            {{ .Content }}
+        </div>
+        
+        {{ if .Params.tags }}
+        <div class="article-tags">
+            <strong>Tags:</strong>
+            {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</article>
+
+<style>
+.article-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.article-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-tags {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+    margin: 0 var(--spacing-xs);
+}
+</style>
+{{ end }}
