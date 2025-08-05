@@ -66,14 +66,6 @@ body {
   transition: var(--transition);
 }
 
-/* Dark theme adjustments for syntax highlighting */
-[data-theme="dark"] .chroma { background-color: var(--code-bg) !important; color: var(--text-primary) !important; }
-[data-theme="dark"] .highlight { background-color: var(--code-bg) !important; }
-[data-theme="dark"] .highlight > div { background-color: var(--code-bg) !important; }
-[data-theme="dark"] .highlight pre { background-color: var(--code-bg) !important; color: var(--text-primary) !important; }
-[data-theme="dark"] .chroma .lntable { background-color: var(--code-bg) !important; }
-[data-theme="dark"] .chroma .lntd { background-color: var(--code-bg) !important; }
-
 /* Container */
 .container {
   max-width: var(--container-max-width);

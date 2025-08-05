@@ -7,7 +7,7 @@ title = 'Pascal - Readable, Reliable Programming'
 
 [markup]
   [markup.highlight]
-    style = 'github'
+    style = 'monokai'
     lineNos = true
     tabWidth = 2
     codeFences = true
