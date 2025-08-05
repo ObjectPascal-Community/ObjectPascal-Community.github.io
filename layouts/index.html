@@ -12,13 +12,12 @@
 <section class="content-section">
     <div class="container">
         <h2 class="section-title">Clean, Readable Code</h2>
-        <div class="highlight">
-            <pre class="chroma"><code><span class="k">program</span> <span class="n">HelloWorld</span>;
-<span class="k">begin</span>
-    <span class="nf">writeln</span>(<span class="s1">'Hello, World!'</span>);
-    <span class="nf">writeln</span>(<span class="s1">'Welcome to Pascal programming'</span>);
-<span class="k">end</span>.</code></pre>
-        </div>
+        {{ $codeExample := `program HelloWorld;
+begin
+    writeln('Hello, World!');
+    writeln('Welcome to Pascal programming');
+end.` }}
+        {{ highlight $codeExample "objectpascal" "linenos=false" }}
     </div>
 </section>
 
