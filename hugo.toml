@@ -33,3 +33,8 @@ title = 'Pascal - Readable, Reliable Programming'
     name = 'Community'
     url = '/community/'
     weight = 40
+
+# Enable section pages
+[taxonomies]
+  tag = "tags"
+  category = "categories"
