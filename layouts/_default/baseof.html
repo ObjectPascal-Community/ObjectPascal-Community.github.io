@@ -37,6 +37,7 @@
                 const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
                 body.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
+                // CSS variables automatically handle syntax highlighting theme switching!
             });
         }
     </script>
