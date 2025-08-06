@@ -11,7 +11,7 @@ Pascal is a programming language that embodies the principles of clarity, reliab
 
 Pascal was born from a simple yet profound philosophy: **programming should be clear, structured, and understandable**. Niklaus Wirth designed Pascal not just as a programming language, but as a tool for teaching and learning the fundamental concepts of computer science.
 
-Wirth famously said, "A good programming language is a conceptual universe for thinking about programming." Pascal provides exactly that—a clean, logical framework that mirrors how we naturally think about solving problems.
+Wirth believed that a programming language should provide a clear conceptual framework for thinking about programming. Pascal provides exactly that—a clean, logical framework that mirrors how we naturally think about solving problems.
 
 ## Pascal's Enduring Principles
 
@@ -57,8 +57,9 @@ Today, Pascal continues to thrive with active development communities, modern la
 Object Pascal extends Pascal's clarity into the world of object-oriented programming. It maintains Pascal's readable syntax while adding powerful features like classes, inheritance, interfaces, and generics.
 
 Modern Object Pascal supports:
+
 - **Cross-platform development** - Write once, deploy everywhere
-- **Modern language features** - Generics, anonymous methods, RTTI
+- **Modern language features** - Generics, RTTI, anonymous methods (in the  _trunk_ branch)
 - **Rich ecosystems** - Comprehensive libraries and frameworks
 - **Visual development** - Integrated designers and RAD tools
 
@@ -84,28 +85,18 @@ Pascal, as a language family, has numerous implementations beyond the mainstream
 - Built-in educational tools and simplified development environment
 - Strong focus on teaching programming concepts
 
-### Smart Pascal
-[Smart Pascal](https://smartpascal.com/) brings Pascal to web development, compiling Pascal code to optimized JavaScript. It enables developers to use Pascal's clarity for both client-side and server-side web applications.
+### pas2js (Pascal to JavaScript)
+[pas2js](https://wiki.freepascal.org/pas2js) is the official Free Pascal transpiler that compiles Pascal code to JavaScript. Maintained by the Free Pascal team, it brings Pascal's clarity to modern web development.
 
 **Key Features:**
-- Compiles Pascal to JavaScript
-- Full DOM access and web API integration
+- Official Free Pascal project for web development
+- Compiles Object Pascal to clean, readable JavaScript
+- Full DOM access and modern web API integration
 - Node.js support for server-side development
-- Visual web development tools
-
-### Turbo51
-Turbo51 is a Pascal compiler specifically designed for 8051 microcontrollers, bringing Pascal's structured approach to embedded systems development.
-
-**Key Features:**
-- Targets 8051 microcontroller family
-- Optimized code generation for resource-constrained environments
-- Pascal syntax for embedded systems programming
-
-### Virtual Pascal
-Virtual Pascal was a popular Pascal implementation for OS/2 and Windows, known for its speed and compatibility. While no longer actively developed, it influenced many modern Pascal implementations.
+- Active development and community support
 
 ### GNU Pascal (GPC)
-GNU Pascal is part of the GNU Compiler Collection, providing a free Pascal compiler that aims for ISO Pascal compatibility while adding useful extensions.
+[GNU Pascal](https://www.gnu-pascal.de/gpc/h-index.html) is part of the GNU Compiler Collection, providing a free Pascal compiler that aims for ISO Pascal compatibility while adding useful extensions.
 
 **Key Features:**
 - ISO Pascal standard compliance
@@ -113,10 +104,14 @@ GNU Pascal is part of the GNU Compiler Collection, providing a free Pascal compi
 - Integration with GNU development tools
 - Free and open source
 
-### IP Pascal
-IP Pascal is an implementation focused on ISO Pascal standard compliance, providing a reference implementation for educational and research purposes.
+### Turbo51
+[Turbo51](https://turbo51.com/) is a Pascal compiler specifically designed for 8051 microcontrollers, bringing Pascal's structured approach to embedded systems development.
 
-For a comprehensive list of Pascal implementations, see the [Pascal implementations wiki](https://wiki.freepascal.org/Pascal_implementations).
+**Key Features:**
+- Targets 8051 microcontroller family
+- Optimized code generation for resource-constrained environments
+- Pascal syntax for embedded systems programming
+
 
 ## Why Pascal Matters Today
 
@@ -137,21 +132,5 @@ Ready to experience Pascal's unique combination of clarity and power?
 - **[Learn Pascal](/learn/)** - Start with our comprehensive tutorials
 - **[Documentation](/docs/)** - Explore Pascal's features and capabilities  
 - **[Community](/community/)** - Connect with Pascal developers worldwide
-
-## Explore the Pascal Ecosystem
-
-- **[Free Pascal Compiler](https://www.freepascal.org/)** - The leading open-source Pascal compiler
-- **[Lazarus IDE](https://www.lazarus-ide.org/)** - Cross-platform visual development environment
-- **[Pascal Standards](https://www.pascal-central.com/standards.html)** - Language specifications and standards
-- **[Academic Research](https://scholar.google.com/scholar?q=pascal+programming+language)** - Pascal in computer science education
-
-## Join the Pascal Community
-
-Pascal has a vibrant, welcoming community of developers, educators, and enthusiasts:
-
-- **[Pascal Forums](https://forum.lazarus.freepascal.org/)** - Discuss Pascal development with experts
-- **[User Groups](/community/#user-groups)** - Find Pascal developers in your area
-- **[Educational Resources](/learn/)** - Materials for teaching and learning Pascal
-- **[Open Source Projects](https://github.com/topics/pascal)** - Contribute to Pascal projects on GitHub
 
 Pascal isn't just a programming language—it's a philosophy of clear thinking, structured problem-solving, and elegant code. Whether you're learning your first programming concepts or building professional applications, Pascal provides the clarity and power you need to succeed.

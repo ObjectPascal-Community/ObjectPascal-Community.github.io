@@ -6,6 +6,9 @@ title = 'Object Pascal - Readable, Reliable Programming'
 # theme = 'ananke'
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     style = 'catppuccin-frappe'
     lineNos = true

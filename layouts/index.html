@@ -4,7 +4,7 @@
     <div class="container">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Object Pascal</h1>
+                <h1>Pascal</h1>
                 <p class="hero-subtitle">Build readable, fast and reliable software.</p>
                 <div class="hero-actions">
                     <a href="{{ "/learn/" | relURL }}" class="hero-cta primary">Get Started</a>
@@ -141,7 +141,7 @@ end.` }}
                     <div class="code-example" id="example-sqlite">
                         {{ $sqliteCode := `program sqlite;
 
-{$mode objfpc}{$H+}
+{$mode objfpc}{$H+}{$J-}
 
 uses
   SysUtils, sqldb, sqlite3conn;

@@ -256,6 +256,8 @@ a:hover {
 .code-examples {
   position: relative;
   height: 420px; /* Fixed height to prevent layout shifts */
+  width: 100%; /* Fixed width to prevent layout shifts */
+  overflow: hidden;
 }
 
 .code-example {
@@ -265,6 +267,7 @@ a:hover {
   left: 0;
   right: 0;
   height: 100%;
+  width: 100%; /* Ensure consistent width */
 }
 
 .code-example.active {
@@ -280,7 +283,7 @@ a:hover {
 }
 
 .hero-code pre {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   font-size: 0.75rem;
   line-height: 1.4;
   height: 100%;
@@ -425,7 +428,7 @@ a:hover {
 
 pre {
   background-color: var(--code-bg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   overflow-x: auto;
   font-family: var(--font-mono);
   font-size: 1rem;
@@ -548,5 +551,97 @@ pre code {
   
   .card {
     padding: var(--spacing-lg);
+  }
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-lg) 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+table thead {
+  background-color: var(--bg-secondary);
+}
+
+table th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+table tbody tr:hover {
+  background-color: var(--bg-secondary);
+  transition: var(--transition);
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table responsive design */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  table th,
+  table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  /* Stack table on very small screens */
+  @media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    
+    table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    table tr {
+      border: 1px solid var(--border-color);
+      margin-bottom: var(--spacing-md);
+      border-radius: var(--border-radius);
+      background-color: var(--bg-primary);
+    }
+    
+    table td {
+      border: none;
+      position: relative;
+      padding-left: 50% !important;
+      padding-top: var(--spacing-sm);
+      padding-bottom: var(--spacing-sm);
+    }
+    
+    table td:before {
+      content: attr(data-label) ": ";
+      position: absolute;
+      left: var(--spacing-md);
+      width: 45%;
+      padding-right: var(--spacing-sm);
+      white-space: nowrap;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
   }
 }

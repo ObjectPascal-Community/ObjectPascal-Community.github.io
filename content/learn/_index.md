@@ -2,38 +2,31 @@
 title = 'Learn Pascal'
 date = 2024-05-30T18:56:05+03:00
 draft = false
+layout = 'single-with-sidebar'
 +++
 
-# Learn Pascal Programming
-
-Pascal is an excellent language for learning programming fundamentals. Its clear syntax and structured approach make it perfect for beginners while remaining powerful enough for advanced applications.
-
-## Getting Started
-
-### Installation {#install}
+## Installation
 
 Choose your Pascal development environment:
 
-**Free Pascal Compiler (FPC)**
-- Cross-platform Pascal compiler
-- Command-line based development
-- [Download FPC](https://www.freepascal.org/)
+| Feature | Free Pascal Compiler (FPC) | Lazarus IDE |
+|---------|----------------------------|-------------|
+| **Type** | Command-line compiler | Visual development environment |
+| **Interface** | Terminal/command-line | Graphical IDE with forms designer |
+| **Best for** | Learning fundamentals, scripting | GUI applications, beginners |
+| **Includes** | Pascal compiler only | FPC + IDE + visual designer |
+| **Platform** | Cross-platform | Cross-platform |
+| **Download** | [Download FPC](https://www.freepascal.org/) | [Download Lazarus](https://www.lazarus-ide.org/) |  
 
-**Lazarus IDE**
-- Complete visual development environment
-- Built on Free Pascal
-- Perfect for beginners
-- [Download Lazarus](https://www.lazarus-ide.org/)
 
-### Your First Program
+## Compiling Hello World!
 
 Create a new file called `hello.pas`:
 
 ```objectpascal
 program HelloWorld;
 begin
-    writeln('Hello, Pascal World!');
-    writeln('Ready to learn programming?');
+    writeln('Hello, Pascal!');
 end.
 ```
 
@@ -44,6 +37,7 @@ fpc hello.pas
 ./hello
 ```
 
+
 ## Core Concepts
 
 ### Program Structure
@@ -53,40 +47,87 @@ Every Pascal program follows this basic structure:
 ```objectpascal
 program ProgramName;
 
+{ Constant declarations }
+const
+  MAX_ITEMS = 100;
+  GREETING = 'Welcome to Pascal';
+  PI = 3.14159;
+
+{ Type declarations }
+type
+  TStudent = record
+      name: string;
+      age: integer;
+  end;
+  TScoreArray = array[1..10] of integer;
+
 { Variable declarations }
 var
-    message: string;
-    count: integer;
+  message: string;
+  count: integer;
+  student: TStudent;
+
+{ Procedure and function declarations }
+procedure displayInfo;
+begin
+    writeln('Program: ', GREETING);
+end;
 
 { Main program block }
 begin
-    message := 'Welcome to Pascal';
-    count := 42;
-    writeln(message);
-    writeln('Count: ', count);
+  message := GREETING;
+  count := 42;
+  writeln(message);
+  writeln('Count: ', count);
+  displayInfo;
 end.
 ```
 
 ### Data Types
 
-Pascal has strong typing with these fundamental types:
+Pascal has strong typing with these fundamental and practical types:
 
 ```objectpascal
 var
-    // Integer types
-    age: integer;
-    population: longint;
-    
-    // Real types
-    temperature: real;
-    price: double;
-    
-    // Character and string
-    grade: char;
-    name: string;
-    
-    // Boolean
-    isActive: boolean;
+  // Integer types
+  age: integer;              // -2,147,483,648 to 2,147,483,647
+  population: longint;       // Same as integer
+  fileSize: int64;           // Large numbers: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+  count: cardinal;           // Unsigned: 0 to 4,294,967,295
+  index: word;               // Small positive: 0 to 65,535
+  flags: byte;               // Tiny values: 0 to 255
+  
+  // Real/floating point types
+  temperature: real;         // General purpose floating point
+  price: double;             // High precision: banking, scientific
+  percentage: single;        // Lower precision, memory efficient
+  saving: currency;          // Fixed-point for money calculations
+  
+  // Text and character types
+  grade: char;               // Single character
+  name: string;              // Dynamic string (unlimited length)
+  shortName: string[50];     // Fixed-length string (50 chars max)
+  unicodeStr: UnicodeString; // Unicode support for international text
+  
+  // Boolean and logical
+  isActive: boolean;         // True or false
+  hasPermission: boolean;
+  
+  // Date and time types
+  birthDate: TDateTime;      // Date and time combined
+  startTime: TTime;          // Time only
+  eventDate: TDate;          // Date only
+  
+  // Pointer and reference types
+  dataPtr: pointer;          // Generic pointer
+  objRef: TObject;           // Object reference
+  
+  // Variant types (dynamic typing)
+  dynamicValue: variant;     // Can hold any type
+  
+  // Set types (collections of values)
+  weekDays: set of (Monday, Tuesday, Wednesday, Thursday, Friday);
+  validChars: set of char;   // Set of characters
 ```
 
 ### Control Structures
@@ -95,37 +136,94 @@ var
 
 ```objectpascal
 if age >= 18 then
-    writeln('You are an adult')
+  writeln('You are an adult')
 else
-    writeln('You are a minor');
+  writeln('You are a minor');
 
 case grade of
-    'A': writeln('Excellent!');
-    'B': writeln('Good job!');
-    'C': writeln('Average');
-    else writeln('Keep trying!');
+  'A': writeln('Excellent!');
+  'B': writeln('Good job!');
+  'C': writeln('Average');
+  else writeln('Keep trying!');
 end;
 ```
 
 **Loops:**
 
 ```objectpascal
-{ For loop }
+{ For loop - counting up }
 for i := 1 to 10 do
-    writeln('Number: ', i);
+  writeln('Number: ', i);
 
-{ While loop }
-while count > 0 do
+{ For loop - counting down }
+for i := 10 downto 1 do
+  writeln('Countdown: ', i);
+
+{ For loop with arrays }
+var
+  numbers: array[1..5] of integer = (10, 20, 30, 40, 50);
+  i: integer;
 begin
-    writeln(count);
-    count := count - 1;
+  for i := 1 to 5 do
+    writeln('Array[', i, '] = ', numbers[i]);
 end;
 
-{ Repeat-until loop }
-repeat
+{ While loop - condition checked first }
+var
+  count: integer = 5;
+begin
+  while count > 0 do
+  begin
+    writeln('Count: ', count);
+    count := count - 1;
+  end;
+end;
+
+{ Repeat-until loop - condition checked last }
+var
+  number: integer;
+begin
+  repeat
     write('Enter a positive number: ');
     readln(number);
-until number > 0;
+  until number > 0;
+  writeln('You entered: ', number);
+end;
+
+{ For-in loop (modern Pascal) }
+var
+  names: array of string = ('Alice', 'Bob', 'Charlie');
+  name: string;
+begin
+  for name in names do
+    writeln('Hello, ', name);
+end;
+
+{ Nested loops - multiplication table }
+var
+  i, j: integer;
+begin
+  for i := 1 to 5 do
+  begin
+    for j := 1 to 5 do
+      write(i * j:4);  // Format with width 4
+    writeln;  // New line after each row
+  end;
+end;
+
+{ Loop control statements }
+var
+  i: integer;
+begin
+  for i := 1 to 10 do
+  begin
+    if i = 5 then
+      continue;  // Skip iteration when i = 5
+    if i = 8 then
+      break;     // Exit loop when i = 8
+    writeln(i);
+  end;
+end;
 ```
 
 ## Procedures and Functions
@@ -135,13 +233,13 @@ until number > 0;
 ```objectpascal
 procedure greetUser(name: string);
 begin
-    writeln('Hello, ', name, '!');
-    writeln('Welcome to Pascal programming.');
+  writeln('Hello, ', name, '!');
+  writeln('Welcome to Pascal programming.');
 end;
 
 { Call the procedure }
 begin
-    greetUser('Alice');
+  greetUser('Alice');
 end.
 ```
 
@@ -150,15 +248,15 @@ end.
 ```objectpascal
 function calculateArea(radius: real): real;
 begin
-    calculateArea := 3.14159 * radius * radius;
+  calculateArea := 3.14159 * radius * radius;
 end;
 
 { Using the function }
 var
-    area: real;
+  area: real;
 begin
-    area := calculateArea(5.0);
-    writeln('Area: ', area:0:2);
+  area := calculateArea(5.0);
+  writeln('Area: ', area:0:2);
 end.
 ```
 
@@ -185,22 +283,22 @@ end.
 ```objectpascal
 program ArrayExample;
 var
-    scores: array[1..5] of integer;
-    names: array[1..3] of string;
-    i: integer;
+  scores: array[1..5] of integer;
+  names: array[1..3] of string;
+  i: integer;
 begin
-    { Initialize array }
-    scores[1] := 95;
-    scores[2] := 87;
-    scores[3] := 92;
+  { Initialize array }
+  scores[1] := 95;
+  scores[2] := 87;
+  scores[3] := 92;
     
-    names[1] := 'Alice';
-    names[2] := 'Bob';
-    names[3] := 'Charlie';
+  names[1] := 'Alice';
+  names[2] := 'Bob';
+  names[3] := 'Charlie';
     
-    { Display results }
-    for i := 1 to 3 do
-        writeln(names[i], ': ', scores[i]);
+  { Display results }
+  for i := 1 to 3 do
+    writeln(names[i], ': ', scores[i]);
 end.
 ```
 
@@ -208,27 +306,27 @@ end.
 ```objectpascal
 program RecordExample;
 type
-    TStudent = record
-        name: string;
-        age: integer;
-        grade: char;
-        gpa: real;
-    end;
+  TStudent = record
+    name: string;
+    age: integer;
+    grade: char;
+    gpa: real;
+  end;
 
 var
-    student: TStudent;
+  student: TStudent;
 begin
-    { Initialize record }
-    student.name := 'Emma Watson';
-    student.age := 20;
-    student.grade := 'A';
-    student.gpa := 3.8;
+  { Initialize record }
+  student.name := 'Emma Watson';
+  student.age := 20;
+  student.grade := 'A';
+  student.gpa := 3.8;
     
-    { Display student info }
-    writeln('Student: ', student.name);
-    writeln('Age: ', student.age);
-    writeln('Grade: ', student.grade);
-    writeln('GPA: ', student.gpa:0:1);
+  { Display student info }
+  writeln('Student: ', student.name);
+  writeln('Age: ', student.age);
+  writeln('Grade: ', student.grade);
+  writeln('GPA: ', student.gpa:0:1);
 end.
 ```
 
@@ -237,118 +335,82 @@ end.
 **Reading from Files:**
 ```objectpascal
 program ReadFile;
+
+uses
+  Classes,
+  SysUtils,
+  streamex;
+
 var
-    inputFile: text;
-    line: string;
+  reader: TStreamReader;
+  fileStream: TFileStream;
+  line, filename:string;
+  i: integer;
 begin
-    assign(inputFile, 'data.txt');
-    {$I-} reset(inputFile); {$I+}
-    
-    if IOResult = 0 then
-    begin
-        while not eof(inputFile) do
+  // filename to read
+  filename:= 'cake-ipsum-.txt';
+  try
+    fileStream := TFileStream.Create(filename, fmOpenRead);
+    try
+      reader := TStreamReader.Create(fileStream);
+      try
+        // Set line counter to 1
+        i := 1;
+        while not reader.EOF do
         begin
-            readln(inputFile, line);
-            writeln('Read: ', line);
+          line := reader.ReadLine;
+          WriteLn(Format('line %d is: %s', [i, line]));
+          i := i + 1;
         end;
-        close(inputFile);
-    end
-    else
-        writeln('Error: Could not open file');
+      finally
+        reader.Free;
+      end;
+    finally
+      fileStream.Free;
+    end;
+  except
+    on E: Exception do
+      WriteLn('Error: ' + E.Message);
+  end;
+
+  // Pause console
+  ReadLn;
 end.
 ```
 
 **Writing to Files:**
 ```objectpascal
-program WriteFile;
+program NewTextFile;
+
+uses
+  Classes, SysUtils;
+
 var
-    outputFile: text;
-    i: integer;
+  text: string = 'QILT Surveys';
+  filename :String = 'hello-text.txt';
+  fileStream: TFileStream;
+  size: longint;
+
 begin
-    assign(outputFile, 'output.txt');
-    rewrite(outputFile);
-    
-    writeln(outputFile, 'Pascal File Output Example');
-    writeln(outputFile, '========================');
-    
-    for i := 1 to 5 do
-        writeln(outputFile, 'Line number: ', i);
-    
-    close(outputFile);
-    writeln('File written successfully!');
+  // Create a TFileStream object
+  fileStream := TFileStream.Create(filename, fmCreate);
+  try
+    // set position at the beginning of file
+    fileStream.Position := 0;
+    // Write text into the file
+    size := fileStream.Write(text[1], Length(text));
+    // Show confirmation
+    Writeln(Format('Created %s. %d bytes written.', [filename, size]));
+  finally
+    // Free TFileStream object
+    fileStream.Free;
+  end;
+
+  // Pause console
+  ReadLn;
 end.
 ```
 
-### Error Handling
-
-```objectpascal
-program ErrorHandling;
-var
-    number, divisor: integer;
-    result: real;
-begin
-    try
-        write('Enter a number: ');
-        readln(number);
-        
-        write('Enter divisor: ');
-        readln(divisor);
-        
-        if divisor = 0 then
-            raise Exception.Create('Division by zero is not allowed');
-        
-        result := number / divisor;
-        writeln('Result: ', result:0:2);
-        
-    except
-        on E: Exception do
-        begin
-            writeln('Error occurred: ', E.Message);
-            writeln('Please try again with valid input.');
-        end;
-    end;
-end.
-```
-
-## Learning Path
-
-### Beginner (Week 1-2)
-1. **Setup Environment**: Install Free Pascal or Lazarus
-2. **Basic Syntax**: Variables, data types, input/output
-3. **Control Flow**: If statements, loops, case statements
-4. **Simple Programs**: Calculator, number guessing game
-
-### Intermediate (Week 3-4)
-1. **Procedures & Functions**: Modular programming
-2. **Arrays & Records**: Data organization
-3. **File Operations**: Reading and writing files
-4. **String Manipulation**: Text processing
-
-### Advanced (Week 5-8)
-1. **Object-Oriented Programming**: Classes and inheritance
-2. **Dynamic Memory**: Pointers and dynamic arrays
-3. **GUI Development**: Lazarus forms and controls
-4. **Database Connectivity**: Working with data
-
-## Practice Projects
-
-### Beginner Projects
-- **Simple Calculator**: Basic arithmetic operations
-- **Grade Calculator**: Average grades with letter grades
-- **Number Guessing Game**: Random number generation
-- **Temperature Converter**: Celsius to Fahrenheit
-
-### Intermediate Projects
-- **Student Management System**: Records and file I/O
-- **Text File Analyzer**: Count words, lines, characters
-- **Simple Banking System**: Account management
-- **Inventory Tracker**: Product database
-
-### Advanced Projects
-- **GUI Calculator**: Lazarus-based calculator
-- **Database Application**: Student records with SQLite
-- **Game Development**: Simple 2D games
-- **Web Server**: Basic HTTP server implementation
 
 ## Common Mistakes to Avoid
 
@@ -361,33 +423,34 @@ end.
 ## Development Tools
 
 ### Free Pascal Compiler
+
 - **Cross-platform**: Windows, Linux, macOS, FreeBSD
 - **Command-line**: Compile with `fpc program.pas`
 - **Optimization**: Multiple optimization levels
-- **Debugging**: Built-in debugger support
 
 ### Lazarus IDE
+
 - **Visual Designer**: Drag-and-drop form creation
 - **Code Completion**: IntelliSense-like features
-- **Integrated Debugger**: Step-through debugging
 - **Package System**: Easy library management
 
 ### Text Editors
+
 - **VS Code**: Pascal extensions available
 - **Sublime Text**: Syntax highlighting
 - **Notepad++**: Simple Pascal support
 - **Vim/Emacs**: Advanced editor configurations
 
-## Getting Help
+## When You're Stuck
 
-### When You're Stuck
 1. **Read error messages carefully** - they usually point to the problem
 2. **Check syntax** - missing semicolons, brackets, or keywords
 3. **Use writeln for debugging** - print variable values
 4. **Break down complex problems** - solve step by step
 5. **Ask for help** - community forums and Discord
 
-### Debugging Tips
+## Debugging Tips
+
 ```objectpascal
 { Add debug output }
 writeln('Debug: Variable x = ', x);
@@ -402,5 +465,3 @@ var
 { Calculate compound interest using formula: A = P(1 + r)^t }
 result := principal * Power(1 + rate, years);
 ```
-
-Ready to start coding? [Join our community](/community/) for help and support!
