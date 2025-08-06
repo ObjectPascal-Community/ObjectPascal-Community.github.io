@@ -1,6 +1,6 @@
 baseURL = 'https://pascal-lang.org/'
 languageCode = 'en-us'
-title = 'Pascal - Readable, Reliable Programming'
+title = 'Object Pascal - Readable, Reliable Programming'
 
 # Disable theme to use custom templates
 # theme = 'ananke'
@@ -13,7 +13,7 @@ title = 'Pascal - Readable, Reliable Programming'
     codeFences = true
 
 [params]
-  description = 'Pascal programming language - readable, reliable, and educational'
+  description = 'Object Pascal programming language - readable, reliable, and educational'
   author = 'Object Pascal Community'
 
 [menu]

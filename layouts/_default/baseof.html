@@ -22,7 +22,7 @@
     
     {{ partial "footer.html" . }}
     
-    <!-- Theme toggle script -->
+    <!-- Theme toggle and code selector scripts -->
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
@@ -40,6 +40,29 @@
                 // CSS variables automatically handle syntax highlighting theme switching!
             });
         }
+        
+        // Code example selector functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeTabs = document.querySelectorAll('.code-tab');
+            const codeExamples = document.querySelectorAll('.code-example');
+            
+            codeTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const exampleId = tab.getAttribute('data-example');
+                    
+                    // Remove active class from all tabs and examples
+                    codeTabs.forEach(t => t.classList.remove('active'));
+                    codeExamples.forEach(e => e.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding example
+                    tab.classList.add('active');
+                    const targetExample = document.getElementById('example-' + exampleId);
+                    if (targetExample) {
+                        targetExample.classList.add('active');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
