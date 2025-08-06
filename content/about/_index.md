@@ -1,9 +1,8 @@
 ---
 title: "About Pascal"
 description: "Learn about Pascal's philosophy, history, and the various implementations available today"
+layout: 'single-with-sidebar'
 ---
-
-# About Pascal
 
 Pascal is a programming language that embodies the principles of clarity, reliability, and educational excellence. Created by Niklaus Wirth in 1970, Pascal was designed to encourage good programming practices and make programming concepts accessible to learners while remaining powerful enough for professional software development.
 

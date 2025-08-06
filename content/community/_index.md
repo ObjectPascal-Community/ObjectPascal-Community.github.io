@@ -2,9 +2,9 @@
 title = 'Community'
 date = 2024-05-30T18:56:05+03:00
 draft = false
+layout = 'single-with-sidebar'
 +++
 
-# Pascal Community
 
 Join the vibrant Pascal programming community! Connect with developers, share knowledge, and contribute to the Pascal ecosystem.
 

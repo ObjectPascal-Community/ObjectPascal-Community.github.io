@@ -467,6 +467,39 @@ pre code {
   padding: 0;
 }
 
+/* Lists in main content */
+.article-content ul,
+.main-content ul {
+  list-style-type: disc;
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+}
+
+.article-content ol,
+.main-content ol {
+  list-style-type: decimal;
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+}
+
+.article-content li,
+.main-content li {
+  margin: var(--spacing-xs) 0;
+  line-height: 1.6;
+}
+
+.article-content ul ul,
+.main-content ul ul {
+  margin: var(--spacing-xs) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.article-content ol ol,
+.main-content ol ol {
+  margin: var(--spacing-xs) 0;
+  padding-left: var(--spacing-lg);
+}
+
 /* Footer */
 .site-footer {
   background-color: var(--bg-secondary);
