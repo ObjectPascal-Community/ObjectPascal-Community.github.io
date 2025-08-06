@@ -62,9 +62,39 @@ Modern Object Pascal supports:
 - **Rich ecosystems** - Comprehensive libraries and frameworks
 - **Visual development** - Integrated designers and RAD tools
 
-## Other Implementations of Pascal
+## Major Implementations of Pascal
 
 Pascal, as a language family, has numerous implementations beyond the mainstream options. Each brings unique strengths and targets specific development scenarios:
+
+### Free Pascal Compiler (FPC)
+[Free Pascal](https://www.freepascal.org/) is a mature, open-source Pascal compiler that supports multiple processor architectures and operating systems. It's the most widely used open-source Pascal compiler, compatible with Turbo Pascal and Delphi syntax while adding many modern features.
+
+**Key Features:**
+- Cross-platform support (Windows, Linux, macOS, and more)
+- Multiple processor architectures (x86, x86_64, ARM, and others)
+- Highly compatible with Delphi and Turbo Pascal
+- Large standard library and third-party ecosystem
+- Active open-source development and community support
+
+### Lazarus IDE (FPC + GUI Designer)
+[Lazarus](https://www.lazarus-ide.org/) is a professional open-source development environment for the Free Pascal Compiler. It provides a Delphi-like development experience with a visual form designer and a rich set of visual components.
+
+**Key Features:**
+- Cross-platform IDE (Windows, Linux, macOS, and more)
+- Visual form designer with drag-and-drop interface
+- Large collection of visual and non-visual components
+- Integrated debugger and code tools
+- Single source code base for multiple platforms
+
+### Delphi (Embarcadero)
+[Delphi](https://www.embarcadero.com/products/delphi) is a commercial rapid application development (RAD) environment that uses Object Pascal as its primary programming language. Originally developed by Borland, it remains one of the most powerful Pascal implementations with a strong focus on visual development.
+
+**Key Features:**
+- Visual Component Library (VCL) for Windows development
+- FireMonkey framework for cross-platform applications
+- Integrated Development Environment (IDE) with form designer
+- Strong database connectivity and enterprise features
+- Support for mobile platforms (iOS, Android) and desktop (Windows, macOS, Linux)
 
 ### Oxygene (Elements Compiler)
 [Oxygene](https://www.elementscompiler.com/elements/oxygene/) is a modern Object Pascal implementation that compiles to .NET, Java, and native code. Developed by RemObjects Software, Oxygene brings Pascal's clarity to contemporary platforms while adding cutting-edge language features.
@@ -93,15 +123,6 @@ Pascal, as a language family, has numerous implementations beyond the mainstream
 - Full DOM access and modern web API integration
 - Node.js support for server-side development
 - Active development and community support
-
-### GNU Pascal (GPC)
-[GNU Pascal](https://www.gnu-pascal.de/gpc/h-index.html) is part of the GNU Compiler Collection, providing a free Pascal compiler that aims for ISO Pascal compatibility while adding useful extensions.
-
-**Key Features:**
-- ISO Pascal standard compliance
-- GNU/Linux and Unix platform support
-- Integration with GNU development tools
-- Free and open source
 
 ### Turbo51
 [Turbo51](https://turbo51.com/) is a Pascal compiler specifically designed for 8051 microcontrollers, bringing Pascal's structured approach to embedded systems development.

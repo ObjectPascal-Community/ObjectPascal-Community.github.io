@@ -209,9 +209,17 @@ a:hover {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.6;
+}
+
+.hero-ecosystem {
+  font-size: 1.10rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: light;
 }
 
 .hero-code {
