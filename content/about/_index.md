@@ -18,7 +18,7 @@ Wirth believed that a programming language should provide a clear conceptual fra
 ### Readability Above All
 Pascal's English-like syntax makes code self-documenting. When you read Pascal code, you understand not just *what* the program does, but *why* it does it. This clarity reduces bugs, simplifies maintenance, and makes collaboration natural.
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program CalculateAverage;
 var
   numbers: array[1..10] of real;

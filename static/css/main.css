@@ -424,6 +424,24 @@ a:hover {
   overflow: hidden;
   border: 1px solid var(--border-color);
   box-shadow: 0 2px 4px var(--shadow);
+  position: relative;
+}
+
+/* Pascal compatibility capsule */
+.highlight.capsule-fpc::before {
+  content: 'FPC';
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
 }
 
 pre {

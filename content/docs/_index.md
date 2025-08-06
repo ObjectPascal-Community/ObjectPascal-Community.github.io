@@ -14,7 +14,7 @@ Comprehensive guides and references for Pascal programming.
 
 Pascal uses a clear, structured syntax that emphasizes readability:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program ExampleProgram;
 
 const
@@ -63,7 +63,7 @@ end.
 
 **Structured Types:**
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 { Arrays }
 type
     TScores = array[1..10] of integer;
@@ -87,7 +87,7 @@ type
 
 ### File Operations
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program FileExample;
 var
     inputFile, outputFile: text;
@@ -114,7 +114,7 @@ end.
 
 ### Dynamic Arrays
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program DynamicArrayExample;
 type
     TIntArray = array of integer;
@@ -146,7 +146,7 @@ end.
 
 ### Object-Oriented Programming
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program OOPExample;
 
 type
@@ -214,14 +214,14 @@ end.
 ### Code Style
 
 1. **Use meaningful names:**
-   ```objectpascal
+   ```objectpascal {class="highlight capsule-fpc"}
    var
        studentCount: integer;    // Good
        sc: integer;              // Avoid
    ```
 
 2. **Consistent indentation:**
-   ```objectpascal
+   ```objectpascal {class="highlight capsule-fpc"}
    if condition then
    begin
        statement1;
@@ -230,7 +230,7 @@ end.
    ```
 
 3. **Comment your code:**
-   ```objectpascal
+   ```objectpascal {class="highlight capsule-fpc"}
    { Calculate compound interest }
    function CompoundInterest(principal, rate: real; years: integer): real;
    begin
@@ -240,7 +240,7 @@ end.
 
 ### Error Handling
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program ErrorHandlingExample;
 var
     number, divisor: integer;
@@ -298,7 +298,7 @@ end.
 The System unit is automatically included and provides core functionality:
 
 **Memory Management:**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 { Dynamic memory allocation }
 var
     ptr: ^integer;
@@ -311,7 +311,7 @@ end;
 ```
 
 **String Functions:**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program StringFunctions;
 var
     text: string;
@@ -334,7 +334,7 @@ end.
 
 Provides extended system utilities:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 uses SysUtils;
 
 program SysUtilsExample;
@@ -364,7 +364,7 @@ end.
 
 Mathematical functions and constants:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 uses Math;
 
 program MathExample;
@@ -391,7 +391,7 @@ end.
 
 ### Generic Programming
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program GenericExample;
 
 {$mode objfpc}
@@ -462,7 +462,7 @@ end.
 
 ### Interface Programming
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program InterfaceExample;
 
 {$mode objfpc}
@@ -551,7 +551,7 @@ end.
 
 ### Multi-threading
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program ThreadExample;
 
 {$mode objfpc}
@@ -613,7 +613,7 @@ end.
 
 ### SQLite Integration
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program DatabaseExample;
 
 {$mode objfpc}
@@ -684,7 +684,7 @@ end.
 
 ### Basic Form Application
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 unit MainForm;
 
 {$mode objfpc}{$H+}
@@ -738,7 +738,7 @@ end.
 
 ### Memory Management Tips
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program PerformanceExample;
 
 type
@@ -778,7 +778,7 @@ end.
 
 ### Compiler Directives
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program CompilerDirectives;
 
 {$mode objfpc}          // Object Pascal mode
@@ -814,7 +814,7 @@ end.
 
 ### Unit Testing Framework
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program TestExample;
 
 {$mode objfpc}

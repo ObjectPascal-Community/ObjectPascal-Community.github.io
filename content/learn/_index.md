@@ -23,7 +23,7 @@ Choose your Pascal development environment:
 
 Create a new file called `hello.pas`:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program HelloWorld;
 begin
     writeln('Hello, Pascal!');
@@ -44,7 +44,7 @@ fpc hello.pas
 
 Every Pascal program follows this basic structure:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"} {wrapper="highlight capsule-fpc"}
 program ProgramName;
 
 { Constant declarations }
@@ -87,7 +87,7 @@ end.
 
 Pascal has strong typing with these fundamental and practical types:
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 var
   // Integer types
   age: integer;              // -2,147,483,648 to 2,147,483,647
@@ -134,7 +134,7 @@ var
 
 **Conditional Statements:**
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 if age >= 18 then
   writeln('You are an adult')
 else
@@ -150,7 +150,7 @@ end;
 
 **Loops:**
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 { For loop - counting up }
 for i := 1 to 10 do
   writeln('Number: ', i);
@@ -230,7 +230,7 @@ end;
 
 ### Procedures
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 procedure greetUser(name: string);
 begin
   writeln('Hello, ', name, '!');
@@ -245,7 +245,7 @@ end.
 
 ### Functions
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 function calculateArea(radius: real): real;
 begin
   calculateArea := 3.14159 * radius * radius;
@@ -280,7 +280,7 @@ end.
 ### Arrays and Data Structures
 
 **Static Arrays:**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program ArrayExample;
 var
   scores: array[1..5] of integer;
@@ -303,7 +303,7 @@ end.
 ```
 
 **Records (Structures):**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program RecordExample;
 type
   TStudent = record
@@ -333,7 +333,7 @@ end.
 ### File Input/Output
 
 **Reading from Files:**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program ReadFile;
 
 uses
@@ -379,7 +379,7 @@ end.
 ```
 
 **Writing to Files:**
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 program NewTextFile;
 
 uses
@@ -451,7 +451,7 @@ end.
 
 ## Debugging Tips
 
-```objectpascal
+```objectpascal {class="highlight capsule-fpc"}
 { Add debug output }
 writeln('Debug: Variable x = ', x);
 writeln('Debug: Entering function Calculate');
