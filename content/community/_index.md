@@ -8,43 +8,37 @@ layout = 'single-with-sidebar'
 
 Join the vibrant Pascal programming community! Connect with developers, share knowledge, and contribute to the Pascal ecosystem.
 
-## Get Connected
+## Communities
 
-### 🗨️ Discussion Forums
+### Discussion Forums
 
-**Free Pascal Community**
-- Official Free Pascal forums
-- Technical discussions and support
-- [Visit Forum](https://forum.lazarus.freepascal.org/)
+**Community Forums**: 
 
-**Reddit Pascal Community**
-- r/Pascal - General Pascal discussions
-- r/FreePascal - Free Pascal specific
-- [Join on Reddit](https://reddit.com/r/pascal)
+- Join the [Free Pascal Forum](https://forum.lazarus.freepascal.org/)
 
-### 💬 Real-time Chat
+**Reddit Pascal Community** :
 
-**Discord Server**
-- Instant help and discussions
-- Code sharing and collaboration
-- Community events and challenges
-- [Join Discord](https://discord.gg/pascal) *(Coming Soon)*
+- Discuss at [r/pascal](https://reddit.com/r/pascal)
 
-**IRC Channels**
-- #freepascal on Libera.Chat
-- #lazarus on Libera.Chat
+### Real-time Chat
 
-### 📧 Mailing Lists
+**Discord**: 
+
+- Join the [Unofficial Pascal Programming Discord Server](https://discord.com/channels/570025060312547359/570025060312547361)
+
+### Mailing Lists
 
 **Free Pascal Lists**
-- fpc-announce: Release announcements
-- fpc-pascal: General Pascal discussions
-- fpc-devel: Development discussions
-- [Subscribe](https://lists.freepascal.org/)
+
+- Subscribe to [Mailing lists](https://www.freepascal.org/maillist.html)
+  - `fpc-announce`: Release announcements
+  - `fpc-devel`: Development discussions
+  - `fpc-pascal`: General Pascal discussions
+
 
 ## Open Source Projects
 
-### 🚀 Contribute to Pascal
+### Contribute to Pascal
 
 **Free Pascal Compiler**
 - Core compiler development
@@ -58,11 +52,9 @@ Join the vibrant Pascal programming community! Connect with developers, share kn
 - [GitLab Repository](https://gitlab.com/freepascal.org/lazarus/lazarus)
 
 **Pascal Libraries**
-- Synapse: Internet protocols
-- mORMot: ORM framework
-- Graphics32: 2D graphics library
+- Visit the latest list here: [Awesome Pascal](https://github.com/Fr0sT-Brutal/awesome-pascal)
 
-### 📚 Documentation Projects
+### Documentation Projects
 
 Help improve Pascal documentation:
 - Tutorial writing
@@ -72,7 +64,7 @@ Help improve Pascal documentation:
 
 ## Learning Resources
 
-### 🎓 Educational Content
+### Educational Content
 
 **Online Courses**
 - Pascal programming fundamentals
@@ -89,52 +81,30 @@ Help improve Pascal documentation:
 - "Lazarus Complete Guide"
 - "Object Pascal Handbook"
 
-### 💡 Code Examples
-
-**GitHub Collections**
-- [Pascal-Examples](https://github.com/ObjectPascal-Community/examples)
-- Algorithm implementations
-- Design pattern examples
-- Real-world applications
-
 ## Events and Meetups
 
-### 🏛️ Conferences
+### Conferences
 
-**European Pascal Conference**
-- Annual gathering of Pascal developers
-- Technical presentations and workshops
-- Networking opportunities
+_...Coming soon..._
 
-**Local Meetups**
-- Check for Pascal groups in your area
-- Online meetups and code reviews
-- Lightning talks and presentations
+### Competitions
 
-### 🏆 Competitions
+_...Coming soon..._
 
-**Pascal Programming Contest**
-- Annual coding challenges
-- Educational and fun problems
-- Prizes and recognition
-
-**Open Source Contributions**
-- Hacktoberfest participation
-- Bug fixes and feature additions
-- Documentation improvements
 
 ## Getting Help
 
-### ❓ Where to Ask Questions
+### Where to Ask Questions
 
 1. **Stack Overflow**: Tag your questions with `pascal`, `freepascal`, or `lazarus`
 2. **Forums**: Free Pascal and Lazarus official forums
-3. **Discord/IRC**: Real-time help from community members
+3. **Discord**: Real-time help from community members
 4. **GitHub Issues**: For specific library or tool problems
 
-### 📝 How to Ask Good Questions
+### How to Ask Good Questions
 
 **Include:**
+
 - Pascal/compiler version
 - Operating system
 - Complete error messages
@@ -142,6 +112,7 @@ Help improve Pascal documentation:
 - What you've already tried
 
 **Example:**
+
 ```
 Title: "Array index out of bounds error in Free Pascal 3.2.2"
 
@@ -162,7 +133,7 @@ I understand the error, but how can I prevent this at runtime?
 
 This website is open source and welcomes contributions!
 
-### 🛠️ How to Contribute
+### How to Contribute
 
 1. **Fork** the repository
 2. **Create** a new branch for your changes
@@ -170,7 +141,7 @@ This website is open source and welcomes contributions!
 4. **Test** your changes locally
 5. **Submit** a pull request
 
-### 📖 Content Guidelines
+### Content Guidelines
 
 - Write clear, beginner-friendly explanations
 - Include working code examples
@@ -178,9 +149,10 @@ This website is open source and welcomes contributions!
 - Follow the existing style and format
 - Add proper metadata to markdown files
 
-### 🐛 Report Issues
+### Report Issues
 
 Found a problem? Help us improve:
+
 - [Report bugs](https://github.com/ObjectPascal-Community/ObjectPascal-Community.github.io/issues)
 - Suggest new content
 - Fix typos and errors
@@ -196,30 +168,11 @@ Our community is welcoming and inclusive. We expect all members to:
 - **Give credit** where credit is due
 - **Follow** platform-specific rules and guidelines
 
-## Stay Updated
-
-### 📢 News and Announcements
-
-- Follow [@PascalLang](https://twitter.com/pascallang) on Twitter
-- Subscribe to our newsletter *(Coming Soon)*
-- Watch this repository for updates
-- Join our Discord for real-time updates
-
-### 🔔 Release Notifications
-
-Stay informed about:
-- Free Pascal compiler releases
-- Lazarus IDE updates
-- New library versions
-- Community project launches
-
 ---
-
-**Ready to join?** Pick a platform above and start connecting with fellow Pascal developers today!
 
 ## Featured Community Projects
 
-### 🚀 Active Open Source Projects
+### Active Open Source Projects
 
 **Free Pascal Compiler (FPC)**
 - **Description**: The core Free Pascal compiler and runtime library
@@ -261,7 +214,7 @@ Stay informed about:
 - **Repository**: [SourceForge - Synapse](https://sourceforge.net/projects/synalist/)
 - **Difficulty**: Intermediate
 
-### 📚 Community-Driven Documentation
+### Community-Driven Documentation
 
 **Pascal Wiki**
 - **Description**: Collaborative Pascal knowledge base
@@ -281,38 +234,8 @@ Stay informed about:
 - **Tools**: Standard translation tools and Git workflow
 - **Coordination**: Translation team leads for each language
 
-## Community Showcase
 
-### 🏆 Project Spotlight
-
-**This Month: PascalScript**
-- **Developer**: RemObjects Software
-- **Description**: Scripting engine that allows Pascal code to be executed at runtime
-- **Use cases**: Plugin systems, configuration scripts, embedded scripting
-- **Why it's cool**: Brings dynamic capabilities to Pascal applications
-- **Learn more**: [PascalScript Documentation](https://www.remobjects.com/ps.aspx)
-
-**Previous Spotlights:**
-- **Graphics32**: High-performance 2D graphics library
-- **Indy Project**: Internet protocol components
-- **LazReport**: Reporting system for Lazarus
-- **BGRABitmap**: Advanced bitmap manipulation library
-
-### 👥 Developer Profiles
-
-**Featured Developer: Mattias Gaertner**
-- **Role**: Lazarus IDE core developer
-- **Contributions**: IDE architecture, debugger integration, code tools
-- **Quote**: "Pascal's clarity makes complex IDE features manageable"
-- **Projects**: Lazarus IDE, CodeTools, FPC integration
-
-**Featured Developer: Arnaud Bouchez**
-- **Role**: mORMot framework creator
-- **Contributions**: High-performance ORM, SOA architecture
-- **Quote**: "Pascal's performance rivals C++ while maintaining readability"
-- **Projects**: mORMot, SynPDF, SynCrypto
-
-### 🎯 Success Stories
+### Success Stories
 
 **Commercial Applications**
 - **Skype**: Original client written in Object Pascal (Delphi)
@@ -324,200 +247,3 @@ Stay informed about:
 - **Universities**: 50+ universities teaching Pascal worldwide
 - **Online Courses**: 10,000+ students learning Pascal annually
 - **Coding Competitions**: Pascal remains popular in programming contests
-
-## Learning Together
-
-### 📖 Study Groups
-
-**Beginner Study Group**
-- **Schedule**: Every Tuesday, 7 PM UTC
-- **Platform**: Discord voice channel
-- **Topics**: Basic syntax, control structures, simple programs
-- **Materials**: Shared exercises and solutions
-- **Mentor**: Rotating experienced community members
-
-**Advanced Topics Group**
-- **Schedule**: Every Friday, 8 PM UTC
-- **Platform**: Discord + screen sharing
-- **Topics**: OOP, generics, advanced memory management
-- **Format**: Code reviews and architectural discussions
-- **Prerequisites**: Comfortable with basic Pascal
-
-**GUI Development Workshop**
-- **Schedule**: Monthly, first Saturday
-- **Platform**: Lazarus IDE + Discord
-- **Topics**: Form design, event handling, custom components
-- **Projects**: Build real applications together
-- **Duration**: 3-hour sessions
-
-### 🏃‍♂️ Code Challenges
-
-**Weekly Coding Challenge**
-- **Day**: Every Monday
-- **Difficulty**: Rotating (Easy → Medium → Hard)
-- **Platform**: GitHub repository with submissions
-- **Prizes**: Community recognition, Pascal swag
-- **Examples**: Algorithm puzzles, data structure problems
-
-**Monthly Project Challenge**
-- **Theme**: Changes monthly (Games, Utilities, Libraries)
-- **Duration**: 4 weeks to complete
-- **Judging**: Community voting + expert review
-- **Categories**: Innovation, Code Quality, Documentation
-- **Prizes**: Featured on website, mentorship opportunities
-
-**Annual Hackathon**
-- **Event**: Pascal Global Hackathon
-- **Duration**: 48 hours
-- **Teams**: 2-4 people, global participation
-- **Themes**: Education, Open Source, Innovation
-- **Prizes**: Cash prizes, conference tickets, mentorship
-
-## Mentorship Program
-
-### 🎓 Become a Mentee
-
-**Application Process**
-1. **Submit Application**: Background, goals, time commitment
-2. **Skill Assessment**: Basic Pascal knowledge test
-3. **Matching**: Paired with compatible mentor
-4. **Kickoff Meeting**: Set goals and schedule
-5. **Regular Check-ins**: Weekly progress meetings
-
-**What You Get**
-- **One-on-one guidance** from experienced Pascal developer
-- **Code reviews** and architectural feedback
-- **Career advice** and industry insights
-- **Project collaboration** opportunities
-- **Community connections** and networking
-
-**Commitment**
-- **Duration**: 3-6 months
-- **Time**: 2-3 hours per week
-- **Activities**: Coding sessions, project work, discussions
-- **Goals**: Skill improvement, project completion, confidence building
-
-### 👨‍🏫 Become a Mentor
-
-**Requirements**
-- **Experience**: 2+ years professional Pascal development
-- **Skills**: Strong technical knowledge, teaching ability
-- **Time**: 3-4 hours per week availability
-- **Communication**: Good English, patient personality
-
-**Benefits**
-- **Give back** to the Pascal community
-- **Develop leadership** and teaching skills
-- **Stay current** with new Pascal developments
-- **Build network** of junior developers
-- **Recognition** in community and resume
-
-**Application Process**
-1. **Submit Profile**: Experience, specialties, availability
-2. **Interview**: Video call with program coordinators
-3. **Training**: Mentorship best practices workshop
-4. **Matching**: Paired with suitable mentee
-5. **Ongoing Support**: Regular mentor meetings and resources
-
-## Regional Communities
-
-### 🌍 Local User Groups
-
-**North America**
-- **Pascal Users Group - Silicon Valley**: Monthly meetups, tech talks
-- **Toronto Pascal Developers**: Quarterly workshops, networking
-- **Pascal Mexico**: Spanish-language community, tutorials
-
-**Europe**
-- **German Pascal Community**: Large active forum, annual conference
-- **French Pascal Users**: Monthly Paris meetups, online resources
-- **UK Pascal Society**: London meetups, university partnerships
-- **Scandinavian Pascal Group**: Nordic countries collaboration
-
-**Asia-Pacific**
-- **Japan Pascal Community**: Tokyo meetups, Japanese documentation
-- **Australian Pascal Users**: Sydney/Melbourne chapters
-- **Pascal India**: Growing community, educational focus
-
-**South America**
-- **Brazilian Pascal Community**: Large Portuguese-speaking group
-- **Argentina Pascal Developers**: Buenos Aires meetups
-
-### 📅 Upcoming Events
-
-**March 2024**
-- **15th**: Pascal Global Meetup (Online)
-- **22nd**: Lazarus GUI Workshop (Berlin)
-- **29th**: Free Pascal Compiler Deep Dive (Online)
-
-**April 2024**
-- **5th**: Pascal in Education Conference (Online)
-- **12th**: Game Development with Pascal (London)
-- **19th**: Database Programming Workshop (Online)
-- **26th**: Pascal Performance Optimization (San Francisco)
-
-**May 2024**
-- **3rd**: Annual Pascal Hackathon (Global, 48 hours)
-- **10th**: Mobile Development with Pascal (Online)
-- **17th**: Pascal Web Development (Amsterdam)
-- **24th**: Community Contributors Summit (Online)
-
-## Community Guidelines
-
-### 🤝 Code of Conduct
-
-**Our Values**
-- **Respect**: Treat all community members with dignity
-- **Inclusivity**: Welcome developers of all backgrounds and skill levels
-- **Collaboration**: Share knowledge and help others succeed
-- **Quality**: Strive for excellence in code and communication
-- **Growth**: Support continuous learning and improvement
-
-**Expected Behavior**
-- **Be helpful and patient** with newcomers
-- **Provide constructive feedback** on code and ideas
-- **Share knowledge freely** and credit others appropriately
-- **Communicate clearly** and professionally
-- **Respect different opinions** and approaches
-
-**Unacceptable Behavior**
-- **Harassment or discrimination** of any kind
-- **Spam or off-topic content** in community channels
-- **Sharing proprietary code** without permission
-- **Personal attacks** or inflammatory language
-- **Disrupting community events** or discussions
-
-**Enforcement**
-- **First violation**: Warning and guidance
-- **Second violation**: Temporary suspension
-- **Serious violations**: Immediate permanent ban
-- **Appeals process**: Contact community moderators
-
-### 📋 Contribution Guidelines
-
-**Code Contributions**
-1. **Follow coding standards**: Consistent formatting and naming
-2. **Write clear comments**: Explain complex logic and algorithms
-3. **Include tests**: Unit tests for new functionality
-4. **Update documentation**: Keep docs in sync with code changes
-5. **Submit pull requests**: Use standard Git workflow
-
-**Documentation Contributions**
-1. **Write for your audience**: Consider skill level and context
-2. **Use clear examples**: Working code snippets with explanations
-3. **Keep it current**: Update outdated information
-4. **Follow style guide**: Consistent formatting and structure
-5. **Proofread carefully**: Check grammar and technical accuracy
-
-**Community Participation**
-1. **Be active and engaged**: Regular participation in discussions
-2. **Help newcomers**: Answer questions and provide guidance
-3. **Share your projects**: Show what you're building with Pascal
-4. **Attend events**: Join meetups, workshops, and conferences
-5. **Provide feedback**: Help improve community resources and events
-
----
-
-**Ready to join?** Pick a platform above and start connecting with fellow Pascal developers today!
-
-*Questions about the community? [Contact us](mailto:community@pascal-lang.org)*

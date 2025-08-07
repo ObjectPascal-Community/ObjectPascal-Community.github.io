@@ -58,9 +58,9 @@ Object Pascal extends Pascal's clarity into the world of object-oriented program
 Modern Object Pascal supports:
 
 - **Cross-platform development** - Write once, deploy everywhere
-- **Modern language features** - Generics, RTTI, anonymous methods (in the  _trunk_ branch)
+- **Modern language features** - Generics, RTTI, anonymous methods (FPC: in the  _trunk_ branch)
 - **Rich ecosystems** - Comprehensive libraries and frameworks
-- **Visual development** - Integrated designers and RAD tools
+- **Visual development** - Integrated designers and RAD tools (Lazarus IDE, Delphi PascalABC.Net)
 
 ## Major Implementations of Pascal
 
