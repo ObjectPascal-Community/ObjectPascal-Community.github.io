@@ -5,65 +5,87 @@ draft = false
 layout = 'single-with-sidebar'
 +++
 
+Comprehensive guides and references for Pascal programming across all implementations.
 
-Comprehensive guides and references for Pascal programming.
+## 1. Core Pascal Language (Universal)
 
-## Language Reference
+These features work across all Pascal implementations including Free Pascal, Delphi, PascalABC.NET, and others.
 
-### Syntax Guide
+### Basic Syntax and Structure
 
 Pascal uses a clear, structured syntax that emphasizes readability:
 
-```objectpascal {class="highlight capsule-fpc"}
-program ExampleProgram;
+```objectpascal {class="highlight capsule-universal"}
+program HelloWorld;
+begin
+    writeln('Hello, Pascal World!');
+end.
+```
 
+### Program Structure
+
+Every Pascal program follows this basic structure:
+
+```objectpascal {class="highlight capsule-universal"}
+program ProgramName;
+
+{ Optional: Uses clause for including units }
+uses
+    SysUtils;
+
+{ Optional: Constant declarations }
 const
     MAX_SIZE = 100;
     PI = 3.14159;
 
+{ Optional: Type declarations }
 type
     TIntArray = array[1..MAX_SIZE] of integer;
     TPoint = record
         x, y: real;
     end;
 
+{ Optional: Variable declarations }
 var
     numbers: TIntArray;
     point: TPoint;
     i: integer;
 
+{ Main program block }
 begin
-    { Initialize array }
-    for i := 1 to 10 do
-        numbers[i] := i * i;
-    
-    { Initialize record }
-    point.x := 10.5;
-    point.y := 20.3;
-    
-    { Output results }
-    writeln('First 10 squares:');
-    for i := 1 to 10 do
-        writeln(i, '^2 = ', numbers[i]);
-    
-    writeln('Point: (', point.x:0:1, ', ', point.y:0:1, ')');
+    { Program statements go here }
+    writeln('Program executed successfully');
 end.
 ```
 
-### Data Types
+### Standard Data Types
 
-**Basic Types:**
-- `integer`: Whole numbers (-32768 to 32767)
-- `longint`: Extended integers (-2147483648 to 2147483647)
+**Basic Types (Universal):**
+- `integer`: Whole numbers
 - `real`: Floating-point numbers
-- `double`: Double-precision floating-point
 - `char`: Single character
-- `string`: Text strings
 - `boolean`: True or false values
+- `string`: Text strings (implementation may vary)
+
+```objectpascal {class="highlight capsule-universal"}
+var
+    count: integer;
+    temperature: real;
+    initial: char;
+    isValid: boolean;
+    name: string;
+begin
+    count := 42;
+    temperature := 98.6;
+    initial := 'A';
+    isValid := true;
+    name := 'Pascal';
+end.
+```
 
 **Structured Types:**
 
-```objectpascal {class="highlight capsule-fpc"}
+```objectpascal {class="highlight capsule-universal"}
 { Arrays }
 type
     TScores = array[1..10] of integer;
@@ -83,71 +105,162 @@ type
     TLetters = set of 'A'..'Z';
 ```
 
-## Code Examples
+### Control Structures
 
-### File Operations
+**Conditional Statements:**
 
-```objectpascal {class="highlight capsule-fpc"}
-program FileExample;
+```objectpascal {class="highlight capsule-universal"}
+program ConditionalExample;
 var
-    inputFile, outputFile: text;
-    line: string;
+    age: integer;
 begin
-    assign(inputFile, 'input.txt');
-    assign(outputFile, 'output.txt');
+    write('Enter your age: ');
+    readln(age);
     
-    reset(inputFile);
-    rewrite(outputFile);
+    if age >= 18 then
+        writeln('You are an adult')
+    else
+        writeln('You are a minor');
     
-    while not eof(inputFile) do
+    { Case statement }
+    case age of
+        0..12: writeln('Child');
+        13..19: writeln('Teenager');
+        20..64: writeln('Adult');
+        else writeln('Senior');
+    end;
+end.
+```
+
+**Loops:**
+
+```objectpascal {class="highlight capsule-universal"}
+program LoopExamples;
+var
+    i, sum: integer;
+begin
+    { For loop }
+    sum := 0;
+    for i := 1 to 10 do
+        sum := sum + i;
+    writeln('Sum 1-10: ', sum);
+    
+    { While loop }
+    i := 1;
+    while i <= 5 do
     begin
-        readln(inputFile, line);
-        writeln(outputFile, 'Processed: ', line);
+        writeln('Count: ', i);
+        i := i + 1;
     end;
     
-    close(inputFile);
-    close(outputFile);
-    
-    writeln('File processing complete.');
+    { Repeat-until loop }
+    i := 1;
+    repeat
+        writeln('Repeat: ', i);
+        i := i + 1;
+    until i > 3;
 end.
 ```
 
-### Dynamic Arrays
+### Procedures and Functions
 
-```objectpascal {class="highlight capsule-fpc"}
-program DynamicArrayExample;
-type
-    TIntArray = array of integer;
+```objectpascal {class="highlight capsule-universal"}
+program ProcedureFunctionExample;
+
+{ Procedure - performs action, no return value }
+procedure PrintMessage(msg: string);
+begin
+    writeln('Message: ', msg);
+end;
+
+{ Function - returns a value }
+function Add(a, b: integer): integer;
+begin
+    Add := a + b;  { or Result := a + b; }
+end;
+
+{ Function with multiple parameters }
+function CalculateArea(length, width: real): real;
+begin
+    CalculateArea := length * width;
+end;
 
 var
-    numbers: TIntArray;
-    i, size: integer;
-
+    result: integer;
+    area: real;
 begin
-    write('Enter array size: ');
-    readln(size);
+    PrintMessage('Hello from procedure!');
     
-    { Allocate memory }
-    SetLength(numbers, size);
+    result := Add(5, 3);
+    writeln('5 + 3 = ', result);
     
-    { Fill array }
-    for i := 0 to size - 1 do
-        numbers[i] := Random(100);
-    
-    { Display array }
-    writeln('Random numbers:');
-    for i := 0 to size - 1 do
-        write(numbers[i], ' ');
-    writeln;
-    
-    { Free memory automatically when program ends }
+    area := CalculateArea(10.5, 8.2);
+    writeln('Area: ', area:0:2);
 end.
 ```
 
-### Object-Oriented Programming
+## 2. Object Pascal Extensions (Widely Supported)
 
-```objectpascal {class="highlight capsule-fpc"}
-program OOPExample;
+These features are supported by most modern Pascal implementations including Delphi, Free Pascal, and others.
+
+### Classes and Objects
+
+```objectpascal {class="highlight capsule-universal"}
+program BasicOOP;
+
+type
+    { Simple class definition }
+    TCounter = class
+    private
+        FValue: integer;
+    public
+        constructor Create;
+        procedure Increment;
+        procedure Decrement;
+        function GetValue: integer;
+    end;
+
+{ Constructor }
+constructor TCounter.Create;
+begin
+    FValue := 0;
+end;
+
+{ Methods }
+procedure TCounter.Increment;
+begin
+    FValue := FValue + 1;
+end;
+
+procedure TCounter.Decrement;
+begin
+    FValue := FValue - 1;
+end;
+
+function TCounter.GetValue: integer;
+begin
+    GetValue := FValue;
+end;
+
+{ Main program }
+var
+    counter: TCounter;
+begin
+    counter := TCounter.Create;
+    try
+        counter.Increment;
+        counter.Increment;
+        writeln('Counter value: ', counter.GetValue);
+    finally
+        counter.Free;
+    end;
+end.
+```
+
+### Inheritance and Polymorphism
+
+```objectpascal {class="highlight capsule-universal"}
+program InheritanceExample;
 
 type
     { Base class }
@@ -156,9 +269,8 @@ type
         FColor: string;
     public
         constructor Create(AColor: string);
-        procedure SetColor(AColor: string);
-        function GetColor: string;
         function GetArea: real; virtual; abstract;
+        property Color: string read FColor write FColor;
     end;
     
     { Derived class }
@@ -176,16 +288,6 @@ begin
     FColor := AColor;
 end;
 
-procedure TShape.SetColor(AColor: string);
-begin
-    FColor := AColor;
-end;
-
-function TShape.GetColor: string;
-begin
-    Result := FColor;
-end;
-
 { TCircle implementation }
 constructor TCircle.Create(AColor: string; ARadius: real);
 begin
@@ -195,7 +297,7 @@ end;
 
 function TCircle.GetArea: real;
 begin
-    Result := 3.14159 * FRadius * FRadius;
+    GetArea := 3.14159 * FRadius * FRadius;
 end;
 
 { Main program }
@@ -203,93 +305,379 @@ var
     circle: TCircle;
 begin
     circle := TCircle.Create('Red', 5.0);
-    writeln('Circle color: ', circle.GetColor);
-    writeln('Circle area: ', circle.GetArea:0:2);
-    circle.Free;
-end.
-```
-
-## Best Practices
-
-### Code Style
-
-1. **Use meaningful names:**
-   ```objectpascal {class="highlight capsule-fpc"}
-   var
-       studentCount: integer;    // Good
-       sc: integer;              // Avoid
-   ```
-
-2. **Consistent indentation:**
-   ```objectpascal {class="highlight capsule-fpc"}
-   if condition then
-   begin
-       statement1;
-       statement2;
-   end;
-   ```
-
-3. **Comment your code:**
-   ```objectpascal {class="highlight capsule-fpc"}
-   { Calculate compound interest }
-   function CompoundInterest(principal, rate: real; years: integer): real;
-   begin
-       Result := principal * Power(1 + rate, years);
-   end;
-   ```
-
-### Error Handling
-
-```objectpascal {class="highlight capsule-fpc"}
-program ErrorHandlingExample;
-var
-    number, divisor: integer;
-    result: real;
-begin
     try
-        write('Enter a number: ');
-        readln(number);
-        write('Enter divisor: ');
-        readln(divisor);
-        
-        if divisor = 0 then
-            raise Exception.Create('Division by zero not allowed');
-        
-        result := number / divisor;
-        writeln('Result: ', result:0:2);
-        
-    except
-        on E: Exception do
-            writeln('Error: ', E.Message);
+        writeln('Circle color: ', circle.Color);
+        writeln('Circle area: ', circle.GetArea:0:2);
+    finally
+        circle.Free;
     end;
 end.
 ```
 
-## Tools and Libraries
+## 3. Implementation-Specific Features
 
-### Free Pascal Compiler
-- Cross-platform compilation
-- Extensive standard library
-- Compatible with Turbo Pascal and Delphi
+### Free Pascal / Lazarus
 
-### Lazarus IDE
-- Visual form designer
-- Integrated debugger
-- Component library (LCL)
-- Cross-platform GUI development
+**Generics in Free Pascal:**
 
-### Popular Libraries
-- **LCL**: Lazarus Component Library for GUI
-- **FCL**: Free Component Library for utilities
-- **Synapse**: Network and internet protocols
-- **ZeosDBO**: Database connectivity
+```objectpascal {class="highlight capsule-fpc"}
+program FPCGenericsDemo;
 
-## Further Reading
+{$mode objfpc}{$H+}{$J-}
 
-- [Free Pascal Reference Guide](https://www.freepascal.org/docs-html/ref/ref.html)
-- [Lazarus Documentation](https://wiki.lazarus.freepascal.org/)
-- [Pascal Programming Tutorials](/learn/)
-- [Community Examples and Projects](/community/)
+type
+    { Generic class }
+    generic TList<T> = class
+    private
+        FItems: array of T;
+        FCount: integer;
+    public
+        procedure Add(const Item: T);
+        function Get(Index: integer): T;
+        property Count: integer read FCount;
+    end;
+
+procedure TList.Add(const Item: T);
+begin
+    SetLength(FItems, FCount + 1);
+    FItems[FCount] := Item;
+    Inc(FCount);
+end;
+
+function TList.Get(Index: integer): T;
+begin
+    if (Index >= 0) and (Index < FCount) then
+        Result := FItems[Index];
+end;
+
+type
+    TIntList = specialize TList<integer>;
+    TStringList = specialize TList<string>;
+
+var
+    intList: TIntList;
+    i: integer;
+begin
+    intList := TIntList.Create;
+    try
+        intList.Add(10);
+        intList.Add(20);
+        intList.Add(30);
+        
+        writeln('Integer list:');
+        for i := 0 to intList.Count - 1 do
+            writeln('  ', intList.Get(i));
+    finally
+        intList.Free;
+    end;
+end.
+```
+
+**Free Pascal Generics.Collections**
+
+```objectpascal {class="highlight capsule-fpc"}
+program SimpleIntegerList;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  Math,
+  Generics.Defaults,
+  Generics.Collections;
+
+type
+  TIntegerList = specialize TList<integer>;
+
+var
+  myIntList: TIntegerList;
+  i: integer;
+
+begin
+  // Create a new generic list
+  myIntList := TIntegerList.Create;
+  try
+    // Add some elements to the list, use Add or AddRange (append)
+    myIntList.Add(0);
+    myIntList.Add(1);
+    myIntList.AddRange([9, 8, 7, 6, 5]);
+
+    // Access the n-th element, 0-indexed
+    WriteLn('The 3rd item is: ', myIntList[2]);
+
+    // Sorting it ascending
+    myIntList.Sort;
+
+    // Iterate through the list
+    for i := 0 to myIntList.Count - 1 do
+      Writeln(myIntList[i]);
+
+    // Get the mean
+    WriteLn('The mean is: ', Math.Mean(myIntList.ToArray): 0: 2);
+
+    // Empty the list
+    myIntList.Clear;
+
+  finally
+    // Free the memory used by the list
+    myIntList.Free;
+  end;
+
+  // Pause console
+  ReadLn;
+end.
+```
+
+### Delphi
+
+**Inline variable declaration:** 
+
+Ref: https://docwiki.embarcadero.com/RADStudio/Sydney/en/Inline_Variable_Declaration
+
+```objectpascal {class="highlight capsule-delphi"}
+procedure Test;
+begin
+  var I: Integer;
+  I := 22;
+  ShowMessage (I.ToString);
+end;
+
+procedure Test2;
+begin
+  var I, K: Integer;
+  I := 22;
+  K := I + 10;
+  ShowMessage (K.ToString);
+end;
+```
+
+**Scoped inline variable:** 
+
+Ref: https://docwiki.embarcadero.com/RADStudio/Sydney/en/Inline_Variable_Declaration
+
+```objectpascal {class="highlight capsule-delphi"}
+procedure Test; // declaration and initialization in a single statement
+begin
+  var I: Integer := 22;
+  ShowMessage (I.ToString);
+end;
+
+procedure Test1; // multiple inline declarations (symbols declared when used)
+begin
+  var I: Integer := 22;
+  var J: Integer;
+  J := 22 + I;
+  var K: Integer := I + J;
+  ShowMessage (K.ToString);
+end;
+
+procedure Test2; // scope limited to local block
+begin
+  var I: Integer := 22;
+  if I > 10 then
+  begin
+    var J: Integer := 3;
+    ShowMessage (J.ToString);
+  end
+  else
+  begin
+    var K: Integer := 3;
+    ShowMessage (J.ToString); // COMPILER ERROR: “Undeclared identifier: ‘J’”
+  end;
+end;
+```
+
+**Generics:**
+
+
+```objectpascal {class="highlight capsule-delphi"}
+program GenericClassExample;
+
+{$APPTYPE CONSOLE}
+
+type
+  TMyGenericClass<T> = class
+  private
+    FValue: T;
+  public
+    constructor Create(AValue: T);
+    function GetValue: T;
+    procedure SetValue(AValue: T);
+  end;
+
+constructor TMyGenericClass<T>.Create(AValue: T);
+begin
+  FValue := AValue;
+end;
+
+function TMyGenericClass<T>.GetValue: T;
+begin
+  Result := FValue;
+end;
+
+procedure TMyGenericClass<T>.SetValue(AValue: T);
+begin
+  FValue := AValue;
+end;
+
+begin
+  // Instantiate TMyGenericClass with Integer
+  var IntInstance: TMyGenericClass<Integer>;
+  IntInstance := TMyGenericClass<Integer>.Create(10);
+  Writeln('Integer Value: ' + IntToStr(IntInstance.GetValue));
+  IntInstance.SetValue(20);
+  Writeln('New Integer Value: ' + IntToStr(IntInstance.GetValue));
+  IntInstance.Free;
+
+  // Instantiate TMyGenericClass with String
+  var StringInstance: TMyGenericClass<string>;
+  StringInstance := TMyGenericClass<string>.Create('Hello');
+  Writeln('String Value: ' + StringInstance.GetValue);
+  StringInstance.SetValue('World');
+  Writeln('New String Value: ' + StringInstance.GetValue);
+  StringInstance.Free;
+
+  Readln;
+end.
+```
+
+### Other Pascal Implementations
+
+**PascalABC.NET:**
+- .NET-based Pascal implementation
+- Modern language features
+- Integrated development environment
+- Supports both console and Windows Forms applications
+
+
+## 4. Cross-Platform Development
+
+### Universal Approaches
+
+**Console Applications:**
+
+```objectpascal {class="highlight capsule-universal"}
+program CrossPlatform;
+
+{$IFDEF WINDOWS}
+  {$APPTYPE CONSOLE}
+{$ENDIF}
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  SysUtils;
+
+begin
+  writeln('This program runs on:');
+  {$IFDEF WINDOWS}
+  writeln('- Windows');
+  {$ENDIF}
+  {$IFDEF LINUX}
+  writeln('- Linux');
+  {$ENDIF}
+  {$IFDEF DARWIN}
+  writeln('- macOS');
+  {$ENDIF}
+  
+  writeln('Pascal version: ', {$I %FPCVERSION%});
+  writeln('Target CPU: ', {$I %FPCTARGETCPU%});
+  writeln('Target OS: ', {$I %FPCTARGETOS%});
+end.
+```
+
+### Common Libraries and Frameworks
+
+**For GUI Development:**
+
+- **Lazarus LCL**: Cross-platform native widgets
+- **fpGUI**: Lightweight, custom-drawn GUI
+- **Delphi VCL & FireMonkey**: GUI Frameworks in Delphi
+
+**For Web Development:**
+
+- **Brook Framework**: Microframework for web applications
+- **Horse**: Fast, minimalist web framework
+- **Pas2JS**: Compile Pascal to JavaScript
+
+**For Database Access:**
+
+- **SQLDB**: Built-in database components
+- **ZeosLib**: High-performance database connectivity
+- **FireDAC**: Enterprise database access (Delphi)
+
+### Best Practices for Cross-Platform Code
+
+```objectpascal {class="highlight capsule-universal"}
+program BestPractices;
+
+uses
+  SysUtils, Classes
+  {$IFDEF UNIX}
+  , BaseUnix
+  {$ENDIF}
+  {$IFDEF WINDOWS}
+  , Windows
+  {$ENDIF};
+
+function GetConfigPath: string;
+begin
+  {$IFDEF WINDOWS}
+  Result := GetEnvironmentVariable('APPDATA') + '\MyApp\';
+  {$ENDIF}
+  {$IFDEF UNIX}
+  Result := GetEnvironmentVariable('HOME') + '/.config/myapp/';
+  {$ENDIF}
+end;
+
+procedure CreateDirectoryIfNotExists(const Path: string);
+begin
+  if not DirectoryExists(Path) then
+    ForceDirectories(Path);
+end;
+
+var
+  configPath: string;
+begin
+  configPath := GetConfigPath;
+  CreateDirectoryIfNotExists(configPath);
+  writeln('Config directory: ', configPath);
+end.
+```
+
+## Getting Started
+
+### Choose Your Pascal Implementation
+
+**For Beginners:**
+- **Free Pascal + Lazarus**: Free, cross-platform, excellent learning environment
+- **PascalABC.NET**: Modern features, good for education
+
+**For Professional Development:**
+- **Delphi**: Commercial, extensive libraries, Windows-focused
+- **Free Pascal**: Open source, highly compatible, cross-platform
+
+**For Web Development:**
+- **Pas2JS**: Compile Pascal to JavaScript
+- **Brook Framework**: Web applications with Free Pascal
+
+### Development Environment Setup
+
+1. **Install a Pascal compiler** (Free Pascal recommended for beginners)
+2. **Choose an IDE** (Lazarus for visual development, VS Code with Pascal extensions for text editing)
+3. **Set up your first project** using the examples above
+4. **Join the community** at [pascal-lang.org/community](/community/)
+
+### Next Steps
+
+- Explore [Learning Resources](/learn/) for tutorials and guides
+- Check out [Community Projects](/community/) for real-world examples
+- Contribute to open-source Pascal projects
+- Share your Pascal knowledge with others
+
+---
+
+*This documentation covers Pascal features across multiple implementations. Code examples are marked with compatibility indicators: **UNIVERSAL** for standard Pascal features, **FPC** for Free Pascal specific features.*
 
 ## Standard Library Reference
 
