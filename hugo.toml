@@ -16,7 +16,7 @@ title = 'Object Pascal - Readable, Reliable Programming'
     codeFences = true
 
 [params]
-  description = 'Object Pascal programming language - readable, reliable, and educational'
+  description = 'Pascal programming language - readable, reliable, and educational'
   author = 'Object Pascal Community'
 
 [menu]
@@ -29,8 +29,8 @@ title = 'Object Pascal - Readable, Reliable Programming'
     url = '/learn/'
     weight = 20
   [[menu.main]]
-    name = 'Docs'
-    url = '/docs/'
+    name = 'Resources'
+    url = '/resources/'
     weight = 30
   [[menu.main]]
     name = 'Community'

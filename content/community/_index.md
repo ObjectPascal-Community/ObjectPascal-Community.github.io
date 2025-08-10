@@ -14,7 +14,8 @@ Join the vibrant Pascal programming community! Connect with developers, share kn
 
 **Community Forums**: 
 
-- Join the [Free Pascal Forum](https://forum.lazarus.freepascal.org/)
+-   [Free Pascal and Lazarus](https://forum.lazarus.freepascal.org/index.php): The main official forum.
+-   [Begin End](https://www.beginend.net/): A site that gathers blog posts about Object Pascal (Delphi, Lazarus, Free Pascal).
 
 **Reddit Pascal Community** :
 
@@ -24,17 +25,27 @@ Join the vibrant Pascal programming community! Connect with developers, share kn
 
 **Discord**: 
 
-- Join the [Unofficial Pascal Programming Discord Server](https://discord.com/channels/570025060312547359/570025060312547361)
+Real-time chat servers for quick questions and community interaction.
+
+-   [Unofficial Free Pascal](https://discord.com/invite/GPFyAc2UJ2)
+-   [Delphi Community](https://delphi-community.com/) (Delphi is a close cousin to Free Pascal, many topics overlap)
 
 ### Mailing Lists
 
 **Free Pascal Lists**
 
-- Subscribe to [Mailing lists](https://www.freepascal.org/maillist.html)
-  - `fpc-announce`: Release announcements
-  - `fpc-devel`: Development discussions
-  - `fpc-pascal`: General Pascal discussions
+Stay informed through these mailing lists. You can subscribe to get emails about specific topics.
 
+-   [Free Pascal Mailing Lists](https://lists.freepascal.org/mailman/listinfo):
+    -   **FPC-Pascal**: For general questions, help, and discussions about using Free Pascal.
+    -   **FPC-Devel**: For technical discussions, bug reports, and if you're interested in how FPC is developed.
+    -   **FPC-Announce**: Get notified about important news, like new Free Pascal releases.
+    -   **pas2js**: Discussions about the pas2js tool, which converts Pascal code to JavaScript.
+    -   **FPC-Other**: For topics that don't fit into the other categories.
+    -   **MacPascal**: Focused on using FPC on macOS and for iOS development.
+-   [Lazarus Mailing Lists](https://lists.lazarus-ide.org/listinfo): Similar lists specifically for the Lazarus IDE.
+
+---
 
 ## Open Source Projects
 
@@ -42,55 +53,24 @@ Join the vibrant Pascal programming community! Connect with developers, share kn
 
 **Free Pascal Compiler**
 - Core compiler development
-- Platform support and optimization
-- [GitHub Repository](https://github.com/graemeg/freepascal)
+- [GitLab Repository](https://gitlab.com/freepascal.org/fpc)
 
 **Lazarus IDE**
 - IDE features and improvements
-- Component development
-- Documentation
-- [GitLab Repository](https://gitlab.com/freepascal.org/lazarus/lazarus)
+- [GitLab Repository](https://gitlab.com/freepascal.org/lazarus)
 
 **Pascal Libraries**
 - Visit the latest list here: [Awesome Pascal](https://github.com/Fr0sT-Brutal/awesome-pascal)
 
-### Documentation Projects
+---
 
-Help improve Pascal documentation:
-- Tutorial writing
-- Code examples
-- Translation projects
-- API documentation
 
-## Learning Resources
+## Conferences & Events
 
-### Educational Content
+- [DelphiCon](https://delphicon.embarcadero.com/) - Annual Delphi conference
+- [Free Pascal and Lazarus events](https://wiki.freepascal.org/Conferences_and_Events) - A list of past and upcoming events
 
-**Online Courses**
-- Pascal programming fundamentals
-- Object-oriented programming with Pascal
-- GUI development with Lazarus
-
-**YouTube Channels**
-- Pascal programming tutorials
-- Lazarus IDE walkthroughs
-- Advanced Pascal techniques
-
-**Books and eBooks**
-- "Modern Pascal Introduction" *(Free)*
-- "Lazarus Complete Guide"
-- "Object Pascal Handbook"
-
-## Events and Meetups
-
-### Conferences
-
-_...Coming soon..._
-
-### Competitions
-
-_...Coming soon..._
-
+---
 
 ## Getting Help
 
@@ -128,6 +108,8 @@ Error: "Range check error while trying to access array element"
 
 I understand the error, but how can I prevent this at runtime?
 ```
+
+---
 
 ## Contributing to This Site
 
@@ -167,83 +149,3 @@ Our community is welcoming and inclusive. We expect all members to:
 - **Share knowledge** freely and constructively
 - **Give credit** where credit is due
 - **Follow** platform-specific rules and guidelines
-
----
-
-## Featured Community Projects
-
-### Active Open Source Projects
-
-**Free Pascal Compiler (FPC)**
-- **Description**: The core Free Pascal compiler and runtime library
-- **Language**: Pascal, Assembly, C
-- **Contributors**: 100+ active developers worldwide
-- **How to contribute**: Bug reports, patches, documentation, testing
-- **Repository**: [GitHub - Free Pascal](https://github.com/graemeg/freepascal)
-- **Difficulty**: Beginner to Expert
-
-**Lazarus IDE**
-- **Description**: Cross-platform visual IDE for Free Pascal
-- **Language**: Object Pascal
-- **Contributors**: 50+ active developers
-- **How to contribute**: UI improvements, components, bug fixes
-- **Repository**: [GitLab - Lazarus](https://gitlab.com/freepascal.org/lazarus/lazarus)
-- **Difficulty**: Intermediate to Expert
-
-**mORMot Framework**
-- **Description**: High-performance ORM and SOA framework
-- **Language**: Object Pascal
-- **Contributors**: 20+ developers
-- **How to contribute**: Examples, documentation, performance testing
-- **Repository**: [GitHub - mORMot](https://github.com/synopse/mORMot2)
-- **Difficulty**: Advanced
-
-**Castle Game Engine**
-- **Description**: 3D and 2D game engine for Pascal
-- **Language**: Object Pascal
-- **Contributors**: 15+ developers
-- **How to contribute**: Game examples, engine features, documentation
-- **Repository**: [GitHub - Castle Game Engine](https://github.com/castle-engine/castle-engine)
-- **Difficulty**: Intermediate to Advanced
-
-**Synapse TCP/IP Library**
-- **Description**: Network communication library
-- **Language**: Object Pascal
-- **Contributors**: 10+ developers
-- **How to contribute**: Protocol implementations, examples, testing
-- **Repository**: [SourceForge - Synapse](https://sourceforge.net/projects/synalist/)
-- **Difficulty**: Intermediate
-
-### Community-Driven Documentation
-
-**Pascal Wiki**
-- **Description**: Collaborative Pascal knowledge base
-- **How to contribute**: Write tutorials, improve existing articles
-- **Topics needed**: Modern Pascal features, best practices, examples
-- **Repository**: [Free Pascal Wiki](https://wiki.freepascal.org/)
-
-**Pascal Cookbook**
-- **Description**: Collection of practical Pascal recipes
-- **How to contribute**: Submit code examples, review submissions
-- **Focus areas**: Algorithms, GUI programming, web development
-- **Repository**: [GitHub - Pascal Cookbook](https://github.com/ObjectPascal-Community/pascal-cookbook)
-
-**Translation Projects**
-- **Languages needed**: Spanish, French, German, Portuguese, Russian, Chinese
-- **Content**: Documentation, tutorials, error messages
-- **Tools**: Standard translation tools and Git workflow
-- **Coordination**: Translation team leads for each language
-
-
-### Success Stories
-
-**Commercial Applications**
-- **Skype**: Original client written in Object Pascal (Delphi)
-- **Total Commander**: Popular file manager
-- **Dev-C++**: IDE development environment
-- **Cheat Engine**: Memory scanner and debugger
-
-**Educational Institutions**
-- **Universities**: 50+ universities teaching Pascal worldwide
-- **Online Courses**: 10,000+ students learning Pascal annually
-- **Coding Competitions**: Pascal remains popular in programming contests
