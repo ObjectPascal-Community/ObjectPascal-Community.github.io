@@ -5,13 +5,15 @@ draft = false
 layout = 'single-with-sidebar'
 +++
 
-# Get Started in 30 Minutes! 🚀
+# Get Started in Quickly using Free Pascal!
 
 Welcome to Pascal! This guide will get you writing your first Pascal programs quickly using Free Pascal. Pascal is perfect for learning programming because it's clear, structured, and teaches good habits.
 
+---
+
 ## Quick Setup
 
-### Option 1: Try Online (No Installation) ⚡
+### Option 1: Try Online (No Installation)
 
 Start coding immediately with these online compilers:
 
@@ -19,7 +21,7 @@ Start coding immediately with these online compilers:
 - **[OneCompiler](https://onecompiler.com/pascal)** - Simple and fast
 - **[OnlineGDB](https://www.onlinegdb.com/online_pascal_compiler)** - Has debugging features
 
-### Option 2: Install on Your Computer 💻
+### Option 2: Install on Your Computer
 
 | Option | Best For | Download |
 |--------|----------|----------|
@@ -28,13 +30,17 @@ Start coding immediately with these online compilers:
 
 **Recommendation**: Start with Lazarus - it includes everything you need!
 
+---
 
-## Your First Program - Hello World! 👋
+## Your First Program - Hello World!
 
 Let's write your first Pascal program. Create a file called `hello.pas`:
 
 ```objectpascal {class="highlight capsule-universal"}
 program HelloWorld;
+
+{$mode objfpc}{$H+}{$J-}
+
 begin
     writeln('Hello, Pascal!');
     writeln('Welcome to programming!');
@@ -48,15 +54,19 @@ end.
 - **Lazarus**: Create new program, replace code, press F9
 - **Command line**: `fpc hello.pas` then `./hello` (Linux/Mac) or `hello.exe` (Windows)
 
+---
 
-## Essential Concepts 🧠
+## Essential Concepts
 
 ### Variables - Storing Information
 
 Think of variables as labeled boxes that hold information:
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program Variables;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     name: string;        // Text
     age: integer;        // Whole numbers
@@ -79,6 +89,10 @@ end.
 
 **Key Points:**
 
+- `{$mode objfpc}{$H+}{$J-}` enable modern Object Pascal features in Free Pascal
+    - [`{$mode objfpc}`](https://wiki.freepascal.org/Mode_ObjFPC) - Enable exceptions, classes, interfaces, overloading, etc
+    - `{$H+}` - Enable long string
+    - `{$J-}` - Disable writing to constants
 - Declare variables with `var`
 - Assign values with `:=` (not `=`)
 - Always end statements with `;`
@@ -87,8 +101,11 @@ end.
 
 Programs need to make choices based on conditions:
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program Decisions;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     age: integer;
 begin
@@ -116,8 +133,11 @@ end.
 
 Loops let you repeat code multiple times:
 
-```objectpascal {class="highlight capsule-fpc capsule-delphi"}
+```objectpascal {class="highlight capsule-fpc"}
 program Loops;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     i: integer;
 begin
@@ -144,14 +164,20 @@ begin
 end.
 ```
 
-## Practice Time! 🏆
+---
+
+
+## Practice Time!
 
 Let's build some real programs to practice what you've learned.
 
 ### Exercise 1: Simple Calculator
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program Calculator;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     num1, num2: real;
     operation: char;
@@ -181,8 +207,11 @@ end.
 
 ### Exercise 2: Number Guessing Game
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program GuessingGame;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     secretNumber, guess, attempts: integer;
 begin
@@ -210,14 +239,19 @@ begin
 end.
 ```
 
-## Basic Debugging 🔍
+---
+
+## Basic Debugging
 
 When your program doesn't work as expected, try these simple debugging techniques:
 
 ### 1. Use `writeln` to Check Values
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program Debug;
+
+{$mode objfpc}{$H+}{$J-}
+
 var
     x, y, result: integer;
 begin
@@ -255,13 +289,225 @@ When you get an error:
    - "Type mismatch" = you're mixing different data types
    - "Syntax error" = you have a typo or missing punctuation
 
-## What's Next? 🚀
+---
+
+## Working with Data Structures
+
+As your programs grow, you'll need better ways to organize data. Pascal provides several powerful tools for this.
+
+### Records - Grouping Related Data
+
+Records let you group related information together:
+
+```objectpascal {class="highlight capsule-fpc"}
+program RecordsDemo;
+
+{$mode objfpc}{$H+}{$J-}
+
+type
+    TPerson = record
+        name: string;
+        age: integer;
+        email: string;
+    end;
+
+var
+    student: TPerson;
+begin
+    // Assign values
+    student.name := 'Alice';
+    student.age := 20;
+    student.email := 'alice@example.com';
+    
+    // Display information
+    writeln('Student Info:');
+    writeln('Name: ', student.name);
+    writeln('Age: ', student.age);
+    writeln('Email: ', student.email);
+end.
+```
+
+### Classes - Objects with Behavior
+
+Classes combine data and methods (functions) that work on that data:
+
+```objectpascal {class="highlight capsule-fpc"}
+program ClassesDemo;
+
+{$mode objfpc}{$H+}{$J-}
+
+type
+    TBankAccount = class
+    private
+        FBalance: real;
+    public
+        constructor Create(InitialBalance: real);
+        procedure Deposit(Amount: real);
+        procedure Withdraw(Amount: real);
+        function GetBalance: real;
+    end;
+
+constructor TBankAccount.Create(InitialBalance: real);
+begin
+    FBalance := InitialBalance;
+end;
+
+procedure TBankAccount.Deposit(Amount: real);
+begin
+    if Amount > 0 then
+        FBalance := FBalance + Amount;
+end;
+
+procedure TBankAccount.Withdraw(Amount: real);
+begin
+    if (Amount > 0) and (Amount <= FBalance) then
+        FBalance := FBalance - Amount;
+end;
+
+function TBankAccount.GetBalance: real;
+begin
+    Result := FBalance;
+end;
+
+var
+    account: TBankAccount;
+begin
+    account := TBankAccount.Create(100.0);
+    try
+        writeln('Initial balance: $', account.GetBalance:0:2);
+        
+        account.Deposit(50.0);
+        writeln('After deposit: $', account.GetBalance:0:2);
+        
+        account.Withdraw(25.0);
+        writeln('After withdrawal: $', account.GetBalance:0:2);
+    finally
+        account.Free;
+    end;
+end.
+```
+
+### Interfaces - Contracts for Classes
+
+Interfaces define what methods a class must implement:
+
+```objectpascal {class="highlight capsule-fpc"}
+program InterfacesDemo;
+
+{$mode objfpc}{$H+}{$J-}
+
+type
+    ISpeaker = interface
+        procedure Speak;
+    end;
+    
+    TPerson = class(TInterfacedObject, ISpeaker)
+    private
+        FName: string;
+    public
+        constructor Create(AName: string);
+        procedure Speak;
+    end;
+    
+    TRobot = class(TInterfacedObject, ISpeaker)
+    public
+        procedure Speak;
+    end;
+
+constructor TPerson.Create(AName: string);
+begin
+    FName := AName;
+end;
+
+procedure TPerson.Speak;
+begin
+    writeln('Hello, I am ', FName);
+end;
+
+procedure TRobot.Speak;
+begin
+    writeln('BEEP BOOP - ROBOT SPEAKING');
+end;
+
+var
+    speakers: array[1..2] of ISpeaker;
+begin
+    speakers[1] := TPerson.Create('Alice');
+    speakers[2] := TRobot.Create;
+    
+    speakers[1].Speak;  // Hello, I am Alice
+    speakers[2].Speak;  // BEEP BOOP - ROBOT SPEAKING
+end.
+```
+
+### Advanced Records - Records with Methods
+
+Modern Pascal allows records to have methods like classes:
+
+```objectpascal {class="highlight capsule-fpc"}
+program AdvancedRecordsDemo;
+
+{$mode objfpc}{$H+}{$J-}
+{$modeswitch advancedrecords}
+
+type
+    TPoint = record
+        X, Y: real;
+        procedure SetCoords(AX, AY: real);
+        function DistanceFromOrigin: real;
+        function ToString: string;
+    end;
+
+procedure TPoint.SetCoords(AX, AY: real);
+begin
+    X := AX;
+    Y := AY;
+end;
+
+function TPoint.DistanceFromOrigin: real;
+begin
+    Result := sqrt(X * X + Y * Y);
+end;
+
+function TPoint.ToString: string;
+begin
+    Result := '(' + FloatToStr(X) + ', ' + FloatToStr(Y) + ')';
+end;
+
+var
+    point1, point2: TPoint;
+begin
+    // Using methods on records
+    point1.SetCoords(3.0, 4.0);
+    writeln('Point 1: ', point1.ToString);
+    writeln('Distance from origin: ', point1.DistanceFromOrigin:0:2);
+    
+    // Direct field access still works
+    point2.X := 1.0;
+    point2.Y := 2.0;
+    writeln('Point 2: ', point2.ToString);
+    writeln('Distance from origin: ', point2.DistanceFromOrigin:0:2);
+
+end.
+```
+
+**Key Points:**
+
+- **Records**: Simple data containers, good for grouping related values
+- **Classes**: Full object-oriented programming with inheritance and polymorphism
+- **Interfaces**: Define contracts that classes must follow
+- [**Advanced Records**](https://wiki.freepascal.org/modeswitch): Combine the simplicity of records with some class features
+
+---
+
+## What's Next?
 
 Congratulations! You now know the basics of Pascal programming. Here's your learning path:
 
-### 🎯 **Ready for More?**
+### Ready for More?
 
-Head over to our **[Documentation Page](/docs/)** for:
+Head over to our **[Resources Page](/resources/)** for:
+
 - Advanced programming concepts (arrays, records, functions)
 - Object-oriented programming with classes
 - File handling and database programming
@@ -269,14 +515,12 @@ Head over to our **[Documentation Page](/docs/)** for:
 - Professional development practices
 - Implementation-specific features (Free Pascal, Delphi, etc.)
 
-### 📚 **Additional Resources**
+### Additional Resources
 
 - [Free Pascal Documentation](https://www.freepascal.org/docs.html) - Official FPC docs
 - [Lazarus Wiki](https://wiki.lazarus.freepascal.org/) - GUI development guide
 - [Pascal Community Forum](https://forum.lazarus.freepascal.org/) - Get help and share projects
 
-### 💡 **Keep Practicing**
-The best way to learn programming is by doing! Try modifying the examples above, create your own small projects, and don't be afraid to experiment.
 
 ---
 
