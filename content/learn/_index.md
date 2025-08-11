@@ -36,7 +36,7 @@ Start coding immediately with these online compilers:
 
 Let's write your first Pascal program. Create a file called `hello.pas`:
 
-```objectpascal {class="highlight capsule-universal"}
+```objectpascal {class="highlight capsule-fpc"}
 program HelloWorld;
 
 {$mode objfpc}{$H+}{$J-}
@@ -101,30 +101,39 @@ end.
 Programs need to make choices based on conditions:
 
 ```objectpascal {class="highlight capsule-fpc"}
-program Decisions;
+program Controls;
 
 {$mode objfpc}{$H+}{$J-}
 
 var
-    age: integer;
+    score: integer;
+    grade: char;
 begin
-    write('Enter your age: ');
-    readln(age);
+    write('Enter your score (0-100): ');
+    readln(score);
     
-    if age >= 18 then
-        writeln('You can vote!')
+    // If-then-else statement
+    if score >= 90 then
+        grade := 'A'
+    else if score >= 80 then
+        grade := 'B'
+    else if score >= 70 then
+        grade := 'C'
+    else if score >= 60 then
+        grade := 'D'
     else
-        writeln('Too young to vote.');
+        grade := 'F';
         
-    // Multiple conditions
-    if age < 13 then
-        writeln('You are a child')
-    else if age < 20 then
-        writeln('You are a teenager')
-    else
-        writeln('You are an adult');
-        
-    readln;
+    writeln('Your grade is: ', grade);
+    
+    // Case statement for multiple choices
+    case grade of
+        'A': writeln('Excellent!');
+        'B': writeln('Good job!');
+        'C': writeln('Average');
+        'D': writeln('Below average');
+        'F': writeln('Failed');
+    end;
 end.
 ```
 
@@ -133,38 +142,54 @@ end.
 Loops let you repeat code multiple times:
 
 ```objectpascal {class="highlight capsule-fpc"}
-program Loops;
+program LoopsDemo;
 
 {$mode objfpc}{$H+}{$J-}
 
 var
-    i: integer;
+    i, sum: integer;
+    numbers: array[1..5] of integer;
+    num: integer;
 begin
-    // Count from 1 to 5
-    writeln('Counting up:');
+    // For loop - count from 1 to 5
+    writeln('For loop:');
     for i := 1 to 5 do
         writeln('Number: ', i);
     
-    // Count down from 5 to 1
-    writeln('Counting down:');
-    for i := 5 downto 1 do
-        writeln('Number: ', i);
+    // For-in loop with array
+    numbers[1] := 10; numbers[2] := 20; numbers[3] := 30;
+    numbers[4] := 40; numbers[5] := 50;
     
-    // While loop - keep going while condition is true
+    writeln('For-in loop:');
+    for num in numbers do
+        writeln('Value: ', num);
+    
+    // While loop - sum numbers until we reach 100
+    sum := 0;
     i := 1;
-    writeln('While loop:');
-    while i <= 3 do
+    writeln('While loop (sum until >= 100):');
+    while sum < 100 do
     begin
-        writeln('Step: ', i);
+        sum := sum + i;
+        writeln('Adding ', i, ', sum = ', sum);
         i := i + 1;
     end;
     
-    readln;
+    // Repeat-until loop - ask for positive number
+    writeln('Repeat-until loop:');
+    repeat
+        write('Enter a positive number: ');
+        readln(num);
+        if num <= 0 then
+            writeln('Please enter a positive number!');
+    until num > 0;
+    writeln('Thank you! You entered: ', num);
 end.
 ```
 
----
 
+
+---
 
 ## Practice Time!
 
@@ -322,6 +347,136 @@ begin
     writeln('Email: ', student.email);
 end.
 ```
+
+### Arrays - Static and Dynamic
+
+Arrays store multiple values of the same type:
+
+```objectpascal {class="highlight capsule-fpc"}
+program ArraysDemo;
+
+{$mode objfpc}{$H+}{$J-}
+
+var
+    // Static array - fixed size
+    staticNumbers: array[1..5] of integer;
+    
+    // Dynamic array - size can change
+    dynamicNumbers: array of integer;
+    
+    i: integer;
+begin
+    // Working with static arrays
+    writeln('Static Array:');
+    staticNumbers[1] := 10;
+    staticNumbers[2] := 20;
+    staticNumbers[3] := 30;
+    staticNumbers[4] := 40;
+    staticNumbers[5] := 50;
+    
+    for i := 1 to 5 do
+        writeln('staticNumbers[', i, '] = ', staticNumbers[i]);
+    
+    // Working with dynamic arrays
+    writeln('Dynamic Array:');
+    SetLength(dynamicNumbers, 3);  // Set size to 3 elements
+    
+    dynamicNumbers[0] := 100;  // Dynamic arrays start at index 0
+    dynamicNumbers[1] := 200;
+    dynamicNumbers[2] := 300;
+    
+    for i := 0 to High(dynamicNumbers) do
+        writeln('dynamicNumbers[', i, '] = ', dynamicNumbers[i]);
+    
+    // Resize dynamic array
+    SetLength(dynamicNumbers, 5);
+    dynamicNumbers[3] := 400;
+    dynamicNumbers[4] := 500;
+    
+    writeln('After resize:');
+    for i := 0 to High(dynamicNumbers) do
+        writeln('dynamicNumbers[', i, '] = ', dynamicNumbers[i]);
+end.
+```
+
+**Key Points:**
+
+- Use `SetLength` to resize dynamic arrays
+- Use `High` to get the highest index of an array
+
+### Generics Collections
+
+FPC 3.2.2 includes generic collections for flexible data storage:
+
+```objectpascal {class="highlight capsule-fpc"}
+program CollectionsDemo;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+    Generics.Collections;
+
+type
+    TStringList = specialize TList<string>;
+    TIntList = specialize TList<integer>;
+    TStrIntDictionary = specialize TDictionary<string, integer>;
+
+var
+    stringList: TStringList;
+    numberList: TIntList;
+    dictionary: TStrIntDictionary;
+    i: integer;
+    key: string;
+begin
+    // Generic List of strings
+    stringList := TStringList.Create;
+    try
+        stringList.Add('Apple');
+        stringList.Add('Banana');
+        stringList.Add('Cherry');
+        
+        writeln('String List:');
+        for i := 0 to stringList.Count - 1 do
+            writeln(i + 1, '. ', stringList[i]);
+    finally
+        stringList.Free;
+    end;
+    
+    // Generic List of integers
+    numberList := TIntList.Create;
+    try
+        numberList.Add(10);
+        numberList.Add(20);
+        numberList.Add(30);
+        
+        writeln('Number List:');
+        for i := 0 to numberList.Count - 1 do
+            writeln('Item ', i, ': ', numberList[i]);
+    finally
+        numberList.Free;
+    end;
+    
+    // Dictionary (key-value pairs)
+    dictionary := TStrIntDictionary.Create;
+    try
+        dictionary.Add('Alice', 25);
+        dictionary.Add('Bob', 30);
+        dictionary.Add('Charlie', 35);
+        
+        writeln('Dictionary:');
+        for key in dictionary.Keys do
+            writeln(key, ' is ', dictionary[key], ' years old');
+    finally
+        dictionary.Free;
+    end;
+end.
+```
+
+**Key Points:**
+
+- Pair `try`/`finally` to ensure resources are cleaned up
+- Create objects using `Create`
+- Use `Free` to release resources
 
 ### Classes - Objects with Behavior
 
