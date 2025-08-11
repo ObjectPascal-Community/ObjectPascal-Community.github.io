@@ -5,9 +5,9 @@ draft = false
 layout = 'single-with-sidebar'
 +++
 
-# Get Started in Quickly using Free Pascal!
+**Get Started in Quickly using Free Pascal!**
 
-Welcome to Pascal! This guide will get you writing your first Pascal programs quickly using Free Pascal. Pascal is perfect for learning programming because it's clear, structured, and teaches good habits.
+Welcome to Pascal! This guide will get you writing your first Pascal programs quickly using Free Pascal.
 
 ---
 
@@ -17,9 +17,9 @@ Welcome to Pascal! This guide will get you writing your first Pascal programs qu
 
 Start coding immediately with these online compilers:
 
-- **[FPC Playground](https://fpc-playground-app-mgeib.ondigitalocean.app/)** - Best for learning
 - **[OneCompiler](https://onecompiler.com/pascal)** - Simple and fast
 - **[OnlineGDB](https://www.onlinegdb.com/online_pascal_compiler)** - Has debugging features
+- **[FPC Playground](https://fpc-playground-app-mgeib.ondigitalocean.app/)** - Best for simple codes
 
 ### Option 2: Install on Your Computer
 
@@ -43,7 +43,6 @@ program HelloWorld;
 
 begin
     writeln('Hello, Pascal!');
-    writeln('Welcome to programming!');
     readln; // Wait for Enter key
 end.
 ```
@@ -91,8 +90,8 @@ end.
 
 - `{$mode objfpc}{$H+}{$J-}` enable modern Object Pascal features in Free Pascal
     - [`{$mode objfpc}`](https://wiki.freepascal.org/Mode_ObjFPC) - Enable exceptions, classes, interfaces, overloading, etc
-    - `{$H+}` - Enable long string
-    - `{$J-}` - Disable writing to constants
+    - [`{$H+}`](https://wiki.freepascal.org/$H) - Enable long string
+    - [`{$J-}`](https://www.freepascal.org/docs-html/current/prog/progsu42.html) - Disable writing to constants
 - Declare variables with `var`
 - Assign values with `:=` (not `=`)
 - Always end statements with `;`
@@ -201,7 +200,6 @@ begin
         else writeln('Error: Unknown operation!');
     end;
     
-    readln;
 end.
 ```
 
@@ -235,7 +233,6 @@ begin
             
     until guess = secretNumber;
     
-    readln;
 end.
 ```
 
@@ -268,7 +265,6 @@ begin
     else
         writeln('Result is small');
         
-    readln;
 end.
 ```
 
@@ -314,7 +310,7 @@ type
 var
     student: TPerson;
 begin
-    // Assign values
+    // Set values
     student.name := 'Alice';
     student.age := 20;
     student.email := 'alice@example.com';
@@ -449,6 +445,9 @@ program AdvancedRecordsDemo;
 
 {$mode objfpc}{$H+}{$J-}
 {$modeswitch advancedrecords}
+
+uses
+  SysUtils;
 
 type
     TPoint = record

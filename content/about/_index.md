@@ -12,6 +12,8 @@ Pascal was born from a simple yet profound philosophy: **programming should be c
 
 Wirth believed that a programming language should provide a clear conceptual framework for thinking about programming. Pascal provides exactly that—a clean, logical framework that mirrors how we naturally think about solving problems.
 
+---
+
 ## Pascal's Enduring Principles
 
 ### Readability Above All
@@ -43,6 +45,8 @@ Pascal teaches fundamental programming concepts without the complexity that can 
 ### Reliability Through Structure
 Pascal's strong typing system and structured programming approach prevent entire classes of errors before they occur. The compiler catches mistakes early, leading to more robust software.
 
+---
+
 ## Pascal's Evolution and Growth
 
 Since its creation in 1970, Pascal has evolved far beyond its educational origins. Modern Pascal implementations power everything from desktop applications to web services, mobile apps to embedded systems.
@@ -50,6 +54,8 @@ Since its creation in 1970, Pascal has evolved far beyond its educational origin
 The language gained massive popularity in the 1980s and 1990s with Turbo Pascal and later Delphi, proving that educational clarity and professional power could coexist beautifully.
 
 Today, Pascal continues to thrive with active development communities, modern language features, and cross-platform capabilities that rival any contemporary programming language.
+
+---
 
 ## Object Pascal: The Modern Evolution
 
@@ -61,6 +67,8 @@ Modern Object Pascal supports:
 - **Modern language features** - Generics, RTTI, anonymous methods (FPC: in the  _trunk_ branch)
 - **Rich ecosystems** - Comprehensive libraries and frameworks
 - **Visual development** - Integrated designers and RAD tools (Lazarus IDE, Delphi PascalABC.Net)
+
+---
 
 ## Major Implementations of Pascal
 
@@ -132,6 +140,7 @@ Pascal, as a language family, has numerous implementations beyond the mainstream
 - Optimized code generation for resource-constrained environments
 - Pascal syntax for embedded systems programming
 
+---
 
 ## Why Pascal Matters Today
 
@@ -145,12 +154,14 @@ In an era of complex frameworks and rapidly changing technologies, Pascal's core
 
 **Cross-Platform Reality**: Today's Pascal tools enable true cross-platform development with native performance.
 
+---
+
 ## Get Started with Pascal
 
 Ready to experience Pascal's unique combination of clarity and power?
 
-- **[Learn Pascal](/learn/)** - Start with our comprehensive tutorials
-- **[Documentation](/docs/)** - Explore Pascal's features and capabilities  
+- **[Learn Pascal](/learn/)** - Start with our brief tutorials
+- **[Resources](/resources/)** - Explore Pascal's features and capabilities  
 - **[Community](/community/)** - Connect with Pascal developers worldwide
 
 Pascal isn't just a programming language—it's a philosophy of clear thinking, structured problem-solving, and elegant code. Whether you're learning your first programming concepts or building professional applications, Pascal provides the clarity and power you need to succeed.
