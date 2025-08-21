@@ -45,6 +45,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const codeTabs = document.querySelectorAll('.code-tab');
             const codeExamples = document.querySelectorAll('.code-example');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
             
             codeTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
@@ -62,6 +64,38 @@
                     }
                 });
             });
+
+            // Mobile menu toggle
+            if (mobileToggle && navbarMenu) {
+                const setAria = (open) => {
+                    mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                setAria(false);
+
+                mobileToggle.addEventListener('click', () => {
+                    const isOpen = navbarMenu.classList.toggle('is-open');
+                    mobileToggle.classList.toggle('active', isOpen);
+                    setAria(isOpen);
+                });
+
+                // Close menu when clicking a link (good UX)
+                navbarMenu.addEventListener('click', (e) => {
+                    if (e.target instanceof Element && e.target.closest('a')) {
+                        navbarMenu.classList.remove('is-open');
+                        mobileToggle.classList.remove('active');
+                        setAria(false);
+                    }
+                });
+
+                // Ensure menu resets when resizing to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        navbarMenu.classList.remove('is-open');
+                        mobileToggle.classList.remove('active');
+                        setAria(false);
+                    }
+                });
+            }
         });
     </script>
 </body>

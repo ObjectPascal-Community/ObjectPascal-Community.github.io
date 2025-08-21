@@ -115,6 +115,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-md) 0;
+  position: relative;
 }
 
 .navbar-brand .logo {
@@ -182,6 +183,18 @@ a:hover {
   background-color: var(--text-primary);
   margin: 3px 0;
   transition: var(--transition);
+  transform-origin: center;
+}
+
+/* Animate hamburger -> X */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Hero section */
@@ -590,12 +603,51 @@ hr {
     padding: 0 var(--spacing-md);
   }
   
+  /* Mobile dropdown menu (smooth transition) */
   .navbar-menu {
-    display: none;
+    display: flex;               /* keep layout consistent */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: 0 8px 25px var(--shadow);
+    z-index: 110;
+    /* hidden state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    visibility: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  }
+  /* Shown when hamburger is toggled */
+  .navbar-menu.is-open {
+    max-height: 60vh;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+  /* Keep column layout during both open and closing transitions to prevent sideways shift */
+  .navbar-menu .navbar-nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  .navbar-menu.is-open .nav-link {
+    display: block;
+    padding: var(--spacing-sm) 0;
   }
   
   .mobile-menu-toggle {
     display: flex;
+    position: relative; /* allow z-index */
+    z-index: 120;       /* above the dropdown so the X isn't clipped */
   }
   
   .hero-content {

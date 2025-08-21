@@ -7,7 +7,7 @@
                 </a>
             </div>
             
-            <div class="navbar-menu">
+            <div class="navbar-menu" id="primary-navigation">
                 <ul class="navbar-nav">
                     {{ range .Site.Menus.main }}
                     <li class="nav-item">
@@ -24,7 +24,7 @@
             </div>
             
             <!-- Mobile menu button -->
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-controls="primary-navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
