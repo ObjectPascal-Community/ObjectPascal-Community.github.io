@@ -1,6 +1,6 @@
 +++
 title = 'Learn Pascal'
-date = 2024-05-30T18:56:05+03:00
+date = 2025-08-22T08:50:00+10:00
 draft = false
 layout = 'single-with-sidebar'
 +++
