@@ -1,4 +1,8 @@
-/* CSS Variables for theming */
+/*
+  Global CSS variables and design system tokens.
+  These drive light/dark colors, spacing, typography, and layout.
+  If you need to tweak the look-and-feel, prefer changing these first.
+*/
 :root {
   /* Light theme colors */
   --bg-primary: #fafbfc;
@@ -32,7 +36,10 @@
   --transition: all 0.2s ease;
 }
 
-/* Dark theme colors - Professional and modern */
+/*
+  Dark theme overrides.
+  The <body> gets data-theme="dark" via JS (see baseof.html) which triggers these vars.
+*/
 [data-theme="dark"] {
   --bg-primary: #0d1117;
   --bg-secondary: #161b22;
@@ -101,7 +108,10 @@ a:hover {
   color: var(--accent-hover);
 }
 
-/* Header */
+/*
+  Header and top navigation bar.
+  The mobile experience uses a hamburger that toggles a dropdown (see media query section).
+*/
 .site-header {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
@@ -186,7 +196,10 @@ a:hover {
   transform-origin: center;
 }
 
-/* Animate hamburger -> X */
+/*
+  Animate hamburger -> X when menu is open.
+  JS toggles .mobile-menu-toggle.active (see baseof.html).
+*/
 .mobile-menu-toggle.active span:nth-child(1) {
   transform: translateY(12px) rotate(45deg);
 }
@@ -448,7 +461,9 @@ a:hover {
   position: relative;
 }
 
-/* Pascal compatibility capsules */
+/*
+  Compatibility "capsules" shown on code blocks (e.g., FPC). Purely decorative labels.
+*/
 .highlight.capsule-fpc::before {
   content: 'FPC';
   position: absolute;
@@ -597,13 +612,20 @@ hr {
   color: var(--text-muted);
 }
 
-/* Responsive design */
+/*
+  Responsive design
+  Mobile navigation lives here: a dropdown that expands/collapses with a smooth transition.
+*/
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--spacing-md);
   }
   
-  /* Mobile dropdown menu (smooth transition) */
+  /*
+    Mobile dropdown menu (smooth transition)
+    Hidden state uses max-height + opacity + translateY for a smooth open/close.
+    We also keep the nav list in column layout in both states to avoid sideways shifting.
+  */
   .navbar-menu {
     display: flex;               /* keep layout consistent */
     flex-direction: column;
@@ -626,6 +648,7 @@ hr {
     visibility: hidden;
     transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   }
+
   /* Shown when hamburger is toggled */
   .navbar-menu.is-open {
     max-height: 60vh;
@@ -634,6 +657,7 @@ hr {
     pointer-events: auto;
     visibility: visible;
   }
+
   /* Keep column layout during both open and closing transitions to prevent sideways shift */
   .navbar-menu .navbar-nav {
     flex-direction: column;

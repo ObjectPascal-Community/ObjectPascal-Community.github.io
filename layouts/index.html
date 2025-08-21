@@ -14,6 +14,15 @@
                 <!-- <p class="version-info">Latest: Free Pascal 3.2.2 • Lazarus 4.2</p> -->
             </div>
             <div class="hero-code">
+                <!--
+                  Code tabs
+                  - To add a new example:
+                    1) Add a button here with data-example="yourkey"
+                    2) Add a matching <div class="code-example" id="example-yourkey"> below.
+                    3) Define a Hugo variable with backticks (e.g., $yourCode := `...`) and render with
+                       {{ highlight $yourCode "objectpascal" "linenos=false" }}
+                  - The tab switching is implemented in JS inside layouts/_default/baseof.html.
+                -->
                 <div class="code-selector">
                     <button class="code-tab active" data-example="webserver">Web Server</button>
                     <button class="code-tab" data-example="sorting">Data Processing</button>
@@ -24,6 +33,12 @@
                     <button class="code-tab" data-example="concurrent">Concurrency</button>
                 </div>
                 
+                <!--
+                  Code examples container
+                  - Each .code-example corresponds to a tab via id="example-<key>".
+                  - We use Hugo's built-in Chroma highlighter. Language: "objectpascal"
+                  - The extra class "capsule-fpc" adds an FPC label via CSS (see static/css/main.css).
+                -->
                 <div class="code-examples">
                     <div class="code-example active" id="example-webserver">
                         {{ $webserverCode := `program webserver;
@@ -309,6 +324,7 @@ end.
 <!-- Getting Started Section -->
 <section class="content-section">
     <div class="container">
+        <!-- Three-step quick start cards. Update links/titles as content grows. -->
         <h2 class="section-title">Quick Start</h2>
         <div class="cards">
             <div class="card">
@@ -333,6 +349,7 @@ end.
 <!-- Community Section -->
 <section class="content-section" style="background-color: var(--bg-secondary);">
     <div class="container">
+        <!-- Call-to-action to join the community. Adjust copy/URL as needed. -->
         <h2 class="section-title">Join the Community</h2>
         <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--spacing-xl);">
             Connect with Pascal developers worldwide, share knowledge, and contribute to the growing Pascal ecosystem.
