@@ -1,0 +1,92 @@
+{{ define "main" }}
+<article class="content-section">
+    <div class="container">
+        <header class="section-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Params.description }}
+            <p class="section-description">{{ .Params.description }}</p>
+            {{ end }}
+        </header>
+        
+        <div class="section-content">
+            {{ .Content }}
+        </div>
+        
+        {{ if .Pages }}
+        <div class="section-pages">
+            <h2>Pages in this section</h2>
+            <div class="cards">
+                {{ range .Pages }}
+                <div class="card">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ if .Summary }}
+                    <p>{{ .Summary }}</p>
+                    {{ end }}
+                    <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</article>
+
+<style>
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.section-content h2,
+.section-content h3,
+.section-content h4 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-content ul,
+.section-content ol {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.section-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-pages {
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.read-more {
+    color: var(--accent-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: var(--accent-hover);
+}
+</style>
+{{ end }}

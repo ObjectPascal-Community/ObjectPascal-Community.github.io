@@ -1,0 +1,32 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Pascal</h4>
+                <p>Readable, reliable programming language for education and development.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="{{ "/learn/" | relURL }}">Getting Started</a></li>
+                    <li><a href="{{ "/docs/" | relURL }}">Documentation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="{{ "/community/" | relURL }}">Join Us</a></li>
+                    <li><a href="https://github.com/ObjectPascal-Community" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Year }} Object Pascal Community. 
+               <a href="{{ "/license/" | relURL }}">Licensed under CC BY-SA 4.0</a>
+            </p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,362 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Pascal</h1>
+                <p class="hero-subtitle">Build readable, fast and reliable software.</p>
+                <p class="hero-ecosystem">With Free Pascal Compiler (FPC), Delphi, PascalABC.Net, and more.</p>
+                <div class="hero-actions">
+                    <a href="{{ "/learn/" | relURL }}" class="hero-cta primary">Get Started</a>
+                    <a href="{{ "/resources/" | relURL }}" class="hero-cta secondary">Resources</a>
+                </div>
+                <!-- <p class="version-info">Latest: Free Pascal 3.2.2 • Lazarus 4.2</p> -->
+            </div>
+            <div class="hero-code">
+                <!--
+                  Code tabs
+                  - To add a new example:
+                    1) Add a button here with data-example="yourkey"
+                    2) Add a matching <div class="code-example" id="example-yourkey"> below.
+                    3) Define a Hugo variable with backticks and render with appropriate options
+
+                  - The tab switching is implemented in JS inside layouts/_default/baseof.html.
+                -->
+                <div class="code-selector">
+                    <button class="code-tab active" data-example="webserver">Web Server</button>
+                    <button class="code-tab" data-example="sorting">Data Processing</button>
+                    <button class="code-tab" data-example="json">JSON API</button>
+                    <button class="code-tab" data-example="filestream">File Processing</button>
+                    <button class="code-tab" data-example="sqlite">SQLite DB</button>
+                    <button class="code-tab" data-example="csv">CSV Parser</button>
+                    <button class="code-tab" data-example="concurrent">Concurrency</button>
+                </div>
+                
+                <!--
+                  Code examples container
+                  - Each .code-example corresponds to a tab via id="example-<key>".
+                  - We use Hugo's built-in Chroma highlighter. Language: "objectpascal"
+                  - The extra class "capsule-fpc" adds an FPC label via CSS (see static/css/main.css).
+                -->
+                <div class="code-examples">
+                    <div class="code-example active" id="example-webserver">
+                        {{ $webserverCode := `program webserver;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  Classes, fphttpapp, httpdefs, httproute;
+
+procedure route1(aReq: TRequest; aResp: TResponse);
+begin
+  aResp.Content := '<h1>Hello Pascal!</h1>';
+end;
+
+begin
+  HTTPRouter.RegisterRoute('/', @route1);
+  Application.Port := 1999;
+  Application.Threaded := true;
+  Application.Initialize;
+
+  WriteLn('Your site is ready at: http://localhost:1999');
+  WriteLn('Hit Ctrl + C to quit');
+
+  Application.Run;
+end.` }}
+<div class="highlight capsule-fpc">{{ highlight $webserverCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-sorting">
+                        {{ $sortingCode := `program datasort;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  SysUtils, Classes, Generics.Collections;
+ 
+type
+  TListInt = specialize TList<integer>;
+ 
+var
+  Numbers: TListInt;
+  Num: integer;
+ 
+begin
+  Numbers := TListInt.Create();
+  try
+    Numbers.AddRange([1, 45, 78, 99, 32, 47]);
+    Numbers.Sort;
+ 
+    for Num in Numbers do
+      WriteLn(Num);
+  finally
+    Numbers.Free;
+  end;
+end.` }}
+<div class="highlight capsule-fpc">{{ highlight $sortingCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-json">
+                        {{ $jsonCode := `program jsonapi;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  fpjson, jsonparser;
+
+var
+  JSON: TJSONObject;
+begin
+  JSON := GetJSON('{"name":"Alice","age":30}') as TJSONObject;
+  try
+    WriteLn(JSON.Get('name', ''), ' is ', JSON.Get('age', 0), ' years old');
+  finally
+    JSON.Free;
+  end;
+end.` }}
+<div class="highlight capsule-fpc">{{ highlight $jsonCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-filestream">
+                        {{ $filestreamCode := `program fileprocess;
+
+{$mode objfpc}{$H+}{$J-}
+ 
+ uses
+   Classes, SysUtils, streamex;
+ 
+ var
+   FileStream: TFileStream;
+   Reader: TStreamReader;
+   Line: string;
+   LineNum: integer;
+ 
+ begin
+   FileStream := TFileStream.Create('data.txt', fmOpenRead);
+   try
+     Reader := TStreamReader.Create(FileStream);
+     try
+       LineNum := 1;
+       while not Reader.EOF do
+       begin
+         Line := Reader.ReadLine;
+         WriteLn('Line ', LineNum, ': ', Line);
+         Inc(LineNum);
+       end;
+     finally
+       Reader.Free;
+     end;
+   finally
+     FileStream.Free;
+   end;
+ end.` }}
+<div class="highlight capsule-fpc">{{ highlight $filestreamCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-sqlite">
+                        {{ $sqliteCode := `program sqlite;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  SysUtils, sqldb, sqlite3conn;
+
+var
+  Conn: TSQLite3Connection;
+  Query: TSQLQuery;
+  Trans: TSQLTransaction;
+
+begin
+  Conn := TSQLite3Connection.Create(nil);
+  Trans := TSQLTransaction.Create(nil);
+  Query := TSQLQuery.Create(nil);
+  try
+    Conn.DatabaseName := 'users.db';
+    Conn.Transaction := Trans;
+    Trans.Database := Conn;
+    Query.Database := Conn;
+    Query.Transaction := Trans;
+    
+    Conn.Open;
+
+    // Simple query
+    Query.SQL.Text := 'SELECT name, age FROM users WHERE age > 25';
+    Query.Open;
+
+    while not Query.EOF do
+    begin
+      WriteLn(Query.FieldByName('name').AsString, ' is ',
+              Query.FieldByName('age').AsInteger, ' years old');
+      Query.Next;
+    end;
+  finally
+    Query.Free;
+    Trans.Free;
+    Conn.Free;
+  end;
+end.` }}
+<div class="highlight capsule-fpc">{{ highlight $sqliteCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-csv">
+                        {{ $csvCode := `program csvparser;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  SysUtils, csvdocument;
+
+var
+  CSV: TCSVDocument;
+  Row, Col: Integer;
+
+begin
+  CSV := TCSVDocument.Create;
+  try
+    CSV.LoadFromFile('data.csv');
+
+    WriteLn('CSV has ', CSV.RowCount, ' rows and ', CSV.ColCount[0], ' columns');
+    WriteLn;
+
+    for Row := 0 to CSV.RowCount - 1 do
+    begin
+      Write('Row ', Row + 1, ': ');
+      for Col := 0 to CSV.ColCount[0] - 1 do
+      begin
+        Write(CSV.Cells[Col, Row]);
+        if Col < CSV.ColCount[0] - 1 then Write(' | ');
+      end;
+      WriteLn;
+    end;
+  finally
+    CSV.Free;
+  end;
+end.` }}
+<div class="highlight capsule-fpc">{{ highlight $csvCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                    
+                    <div class="code-example" id="example-concurrent">
+                        {{ $concurrentCode := `program concurrent;
+
+{$mode objfpc}{$H+}{$J-}
+
+uses
+  {$IFDEF UNIX}
+  cthreads, cmem
+  {$ENDIF}
+  SysUtils, Classes, SyncObjs;
+
+type
+  TWorkerThread = class(TThread)
+  private
+    FTaskID: Integer;
+  protected
+    procedure Execute; override;
+  public
+    constructor Create(TaskID: Integer);
+  end;
+
+constructor TWorkerThread.Create(TaskID: Integer);
+begin
+  FTaskID := TaskID;
+  inherited Create(False);
+end;
+
+procedure TWorkerThread.Execute;
+begin
+  WriteLn('Task ', FTaskID, ' starting...');
+  Sleep(1000 + Random(2000)); // Simulate work
+  WriteLn('Task ', FTaskID, ' completed!');
+end;
+
+var
+  Threads: array[1..4] of TWorkerThread;
+  i: Integer;
+
+begin
+  Randomize;
+
+  // Start concurrent tasks
+  for i := 1 to 4 do
+    Threads[i] := TWorkerThread.Create(i);
+
+  // Wait for completion
+  for i := 1 to 4 do
+  begin
+    Threads[i].WaitFor;
+    Threads[i].Free;
+  end;
+
+  WriteLn('All tasks completed!');
+end.
+
+` }}
+<div class="highlight capsule-fpc">{{ highlight $concurrentCode "objectpascal" "linenos=false"}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Pascal Section -->
+<section class="why-pascal">
+    <div class="container">
+        <h2 class="section-title">Why Pascal?</h2>
+        <div class="pillars">
+            <div class="pillar">
+                <h3>Readability</h3>
+                <p>Pascal's clean, English-like syntax makes code self-documenting. Strong structure and clear semantics eliminate guesswork, making maintenance a breeze for teams of any size.</p>
+            </div>
+            <div class="pillar">
+                <h3>Reliability</h3>
+                <p>Pascal's strong type system and compile-time checks catch errors before they reach production. Memory safety and structured programming prevent entire classes of bugs.</p>
+            </div>
+            <div class="pillar">
+                <h3>Productivity</h3>
+                <p>Pascal has excellent tooling, comprehensive libraries, and cross-platform support. Rapid development cycles with integrated debugging and visual designers boost developer efficiency.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Getting Started Section -->
+<section class="content-section">
+    <div class="container">
+        <!-- Three-step quick start cards. Update links/titles as content grows. -->
+        <h2 class="section-title">Quick Start</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>1. Install</h3>
+                <p>Download and install Free Pascal or Lazarus IDE to start coding immediately.</p>
+                <a href="{{ "/learn/#quick-setup" | relURL }}">Quick Setup →</a>
+            </div>
+            <div class="card">
+                <h3>2. Learn</h3>
+                <p>Learn the essential concepts of Pascal and build your first program.</p>
+                <a href="{{ "/learn/#essential-concepts" | relURL }}">Start Learning →</a>
+            </div>
+            <div class="card">
+                <h3>3. Build</h3>
+                <p>Explore Pascal resources; docs, examples, tutorials and more.</p>
+                <a href="{{ "/resources/" | relURL }}">View Resources →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Section -->
+<section class="content-section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+        <!-- Call-to-action to join the community. Adjust copy/URL as needed. -->
+        <h2 class="section-title">Join the Community</h2>
+        <p style="text-align: center; font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--spacing-xl);">
+            Connect with Pascal developers worldwide, share knowledge, and contribute to the growing Pascal ecosystem.
+        </p>
+        <div style="text-align: center;">
+            <a href="{{ "/community/" | relURL }}" class="hero-cta">Join Community</a>
+        </div>
+    </div>
+</section>
+{{ end }}

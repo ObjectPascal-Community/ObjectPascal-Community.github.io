@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+</head>
+<body>
+    {{ partial "header.html" . }}
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+    
+    <!-- Theme toggle and code selector scripts -->
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const newTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                // CSS variables automatically handle syntax highlighting theme switching!
+            });
+        }
+        
+        // Code example selector functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const codeTabs = document.querySelectorAll('.code-tab');
+            const codeExamples = document.querySelectorAll('.code-example');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+            
+            codeTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const exampleId = tab.getAttribute('data-example');
+                    
+                    // Remove active class from all tabs and examples
+                    codeTabs.forEach(t => t.classList.remove('active'));
+                    codeExamples.forEach(e => e.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding example
+                    tab.classList.add('active');
+                    const targetExample = document.getElementById('example-' + exampleId);
+                    if (targetExample) {
+                        targetExample.classList.add('active');
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            if (mobileToggle && navbarMenu) {
+                const setAria = (open) => {
+                    mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                setAria(false);
+
+                mobileToggle.addEventListener('click', () => {
+                    const isOpen = navbarMenu.classList.toggle('is-open');
+                    mobileToggle.classList.toggle('active', isOpen);
+                    setAria(isOpen);
+                });
+
+                // Close menu when clicking a link (good UX)
+                navbarMenu.addEventListener('click', (e) => {
+                    if (e.target instanceof Element && e.target.closest('a')) {
+                        navbarMenu.classList.remove('is-open');
+                        mobileToggle.classList.remove('active');
+                        setAria(false);
+                    }
+                });
+
+                // Ensure menu resets when resizing to desktop
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        navbarMenu.classList.remove('is-open');
+                        mobileToggle.classList.remove('active');
+                        setAria(false);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

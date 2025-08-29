@@ -1,4 +1,47 @@
 baseURL = 'https://pascal-lang.org/'
 languageCode = 'en-us'
-title = 'Object Pascal Language'
-theme = 'ananke'
+title = 'Object Pascal - Readable, Reliable Programming'
+
+# Disable theme to use custom templates
+# theme = 'ananke'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'catppuccin-frappe'
+    lineNos = true
+    tabWidth = 2
+    codeFences = true
+
+[params]
+  description = 'Pascal programming language - readable, reliable, and educational'
+  author = 'Object Pascal Community'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'Learn'
+    url = '/learn/'
+    weight = 20
+  [[menu.main]]
+    name = 'Resources'
+    url = '/resources/'
+    weight = 30
+  [[menu.main]]
+    name = 'Community'
+    url = '/community/'
+    weight = 40
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 15
+
+# Enable section pages
+[taxonomies]
+  tag = "tags"
+  category = "categories"
