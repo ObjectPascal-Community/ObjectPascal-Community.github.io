@@ -30,6 +30,17 @@ Real-time chat servers for quick questions and community interaction.
 -   [Unofficial Free Pascal](https://discord.com/invite/GPFyAc2UJ2)
 -   [Delphi Community](https://delphi-community.com/) (Delphi is a close cousin to Free Pascal, many topics overlap)
 
+**Telegram**: 
+
+Join these Telegram groups for real-time discussions and community support.
+
+-   [Delphi Developers - International](https://t.me/delphidevelopers) - Official Delphi group
+-   [Delphi & Lazarus - Russian](https://t.me/Delphi_Lazarus) - Russian delphi + Lazarus group
+-   [Delphi Community - Russian](https://t.me/DelphiCommunity) - Russian Delphi oriented group
+-   [Pascal BR](https://t.me/pascalbrasil) - Official brazilian group of Pascal (Delphi, Lazarus, Oxygene, PascalABC, etc...)
+-   [Delphi BR](https://t.me/DelphiBR) - Delphi oriented brazillian group
+-   [Lazarus BR](https://t.me/LazarusBR) - Lazarus oriented brazillian group
+
 ### Mailing Lists
 
 **Free Pascal Lists**
